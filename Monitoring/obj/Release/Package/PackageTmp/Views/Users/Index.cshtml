@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Monitoring.Models.User>
+
+@{
+    ViewBag.Title = "Список пользователей";
+}
+
+<div class="container round-div" style="margin-top: 50px;">
+    <div id="user_list">
+        <table id="example1" class="user_list table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Область</th>
+                    <th>Район</th>
+                    <th>Учреждение</th>
+                    <th>ФИО</th>
+                    <th>email</th>
+                    <th>Роль</th>
+                    <th style="width:15%">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count(); ++i)
+                {
+                    <tr>
+                        <td>@(i + 1)</td>
+                        <td>@if (Model.ElementAt(i).role_id == 2 || Model.ElementAt(i).role_id == 3)
+                        { @Model.ElementAt(i).curators_and_controlers.First(p => p.curator_id == Model.ElementAt(i).id).education__institution.district.area.name}
+                        else if (Model.ElementAt(i).role_id == 4) { @Model.ElementAt(i).experts.First(p => p.expert_id == Model.ElementAt(i).id).education__institution.district.area.name}</td>
+                    <td>
+                            @if (Model.ElementAt(i).role_id == 2 || Model.ElementAt(i).role_id == 3)
+                        { @Model.ElementAt(i).curators_and_controlers.First(p => p.curator_id == Model.ElementAt(i).id).education__institution.district.name}
+                        else if (Model.ElementAt(i).role_id == 4)
+                        { @Model.ElementAt(i).experts.First(p => p.expert_id == Model.ElementAt(i).id).education__institution.district.name}
+                    </td>
+                        <td>
+                            @if (Model.ElementAt(i).role_id == 2 || Model.ElementAt(i).role_id == 3)
+                            { @Model.ElementAt(i).curators_and_controlers.First(p => p.curator_id == Model.ElementAt(i).id).education__institution.full_name}
+                            else if (Model.ElementAt(i).role_id == 4 && Model.ElementAt(i).experts.Count(p => p.expert_id == Model.ElementAt(i).id)>0)
+                            { @Model.ElementAt(i).experts.First(p => p.expert_id == Model.ElementAt(i).id).education__institution.full_name}
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => Model.ElementAt(i).Surname) @Html.DisplayFor(modelItem => Model.ElementAt(i).Name) @Html.DisplayFor(modelItem => Model.ElementAt(i).Patronumic)</td>
+                        <td>@Html.DisplayFor(modelItem => Model.ElementAt(i).email)</td>
+                        <td>@Html.DisplayFor(modelItem => Model.ElementAt(i).Role.name)</td>
+                        <td>
+                            <div class="btn-flex">
+                                <input type="hidden" name="user_id" class="user_id" value="@Model.ElementAt(i).id" />
+                                <a href="@Url.Action("Details","Users",new { id=Model.ElementAt(i).id })" class="btn btn-info btn-xs btn-adm">Инфо</a>
+                                <button title="Удалить" class="btn btn-danger btn-xs btn-adm"><img class="icon" src="~/Content/img/icons/delete-button.svg"></button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>№</th>
+                    <th>Область</th>
+                    <th>Район</th>
+                    <th>Учреждение</th>
+                    <th>ФИО</th>
+                    <th>email</th>
+                    <th>Роль</th>
+                    <th style="width:15%">&nbsp;</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+   <div>
+        <a href="@Url.Action("GetExpertsExcel","Institution")" class="btn btn-danger">Загрузить список экспертов</a>
+    </div>
+</div>
+<div id = "dialog" class="">
+    <p>
+        Вы уверены, что хотите удалить данного пользователя?
+    </p>
+</div>
+
+
+
+

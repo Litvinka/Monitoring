@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Все результаты по учреждениям";
+}
+
+<div class="container" style="margin-top: 50px;">
+
+    <a href="/Reports/Index">Вернуться к отчетам</a>
+    <h4>
+        @ViewBag.Title
+    </h4>
+    <a href="@Url.Action("ExportResults","Reports")" class="btn btn-success">Скачать все результаты по учреждениям</a>
+
+</div>

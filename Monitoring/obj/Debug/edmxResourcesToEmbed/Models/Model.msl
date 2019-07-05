@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище MonitoringModelContainer" CdmEntityContainer="MonitoringEntities">
+    <EntitySetMapping Name="area">
+      <EntityTypeMapping TypeName="MonitoringModel.area">
+        <MappingFragment StoreEntitySet="area">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="audit_object">
+      <EntityTypeMapping TypeName="MonitoringModel.audit_object">
+        <MappingFragment StoreEntitySet="audit_object">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title_site" ColumnName="title_site" />
+          <ScalarProperty Name="adress_site" ColumnName="adress_site" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Coefficients">
+      <EntityTypeMapping TypeName="MonitoringModel.Coefficients">
+        <MappingFragment StoreEntitySet="Coefficients">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Criteria">
+      <EntityTypeMapping TypeName="MonitoringModel.Criteria">
+        <MappingFragment StoreEntitySet="Criteria">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="short_name" ColumnName="short_name" />
+          <ScalarProperty Name="document_name" ColumnName="document_name" />
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="type_organization" ColumnName="type_organization" />
+          <ScalarProperty Name="coefficient_id" ColumnName="coefficient_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="curators_and_controlers">
+      <EntityTypeMapping TypeName="MonitoringModel.curators_and_controlers">
+        <MappingFragment StoreEntitySet="curators_and_controlers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="curator_id" ColumnName="curator_id" />
+          <ScalarProperty Name="education_institution_id" ColumnName="education_institution_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="department_subordination">
+      <EntityTypeMapping TypeName="MonitoringModel.department_subordination">
+        <MappingFragment StoreEntitySet="department_subordination">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="district">
+      <EntityTypeMapping TypeName="MonitoringModel.district">
+        <MappingFragment StoreEntitySet="district">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="area_id" ColumnName="area_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="education__institution">
+      <EntityTypeMapping TypeName="MonitoringModel.education__institution">
+        <MappingFragment StoreEntitySet="education_ institution">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="full_name" ColumnName="full_name" />
+          <ScalarProperty Name="short_name" ColumnName="short_name" />
+          <ScalarProperty Name="audit_object_id" ColumnName="audit_object_id" />
+          <ScalarProperty Name="district_id" ColumnName="district_id" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="type_edu_id" ColumnName="type_edu_id" />
+          <ScalarProperty Name="kind_edu_id" ColumnName="kind_edu_id" />
+          <ScalarProperty Name="OKPO" ColumnName="OKPO" />
+          <ScalarProperty Name="UNP" ColumnName="UNP" />
+          <ScalarProperty Name="director" ColumnName="director" />
+          <ScalarProperty Name="is_application" ColumnName="is_application" />
+          <ScalarProperty Name="type_education_institution_id" ColumnName="type_education_institution_id" />
+          <ScalarProperty Name="ownership_type_id" ColumnName="ownership_type_id" />
+          <ScalarProperty Name="department_subordination_id" ColumnName="department_subordination_id" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="UNP_superior_management" ColumnName="UNP_superior_management" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="events">
+      <EntityTypeMapping TypeName="MonitoringModel.events">
+        <MappingFragment StoreEntitySet="events">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="recipient_id" ColumnName="recipient_id" />
+          <ScalarProperty Name="date_created" ColumnName="date_created" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="experts">
+      <EntityTypeMapping TypeName="MonitoringModel.experts">
+        <MappingFragment StoreEntitySet="experts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="expert_id" ColumnName="expert_id" />
+          <ScalarProperty Name="education_institution_id" ColumnName="education_institution_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Experts_comments">
+      <EntityTypeMapping TypeName="MonitoringModel.Experts_comments">
+        <MappingFragment StoreEntitySet="Experts_comments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="site_experts_id" ColumnName="site_experts_id" />
+          <ScalarProperty Name="answer" ColumnName="answer" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="criteria_id" ColumnName="criteria_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="experts_ratinng">
+      <EntityTypeMapping TypeName="MonitoringModel.experts_ratinng">
+        <MappingFragment StoreEntitySet="experts_ratinng">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="monitoring_id" ColumnName="monitoring_id" />
+          <ScalarProperty Name="audit_object_id" ColumnName="audit_object_id" />
+          <ScalarProperty Name="sum" ColumnName="sum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="MonitoringModel.Groups">
+        <MappingFragment StoreEntitySet="Groups">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kind_edu">
+      <EntityTypeMapping TypeName="MonitoringModel.kind_edu">
+        <MappingFragment StoreEntitySet="kind_edu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kind_event">
+      <EntityTypeMapping TypeName="MonitoringModel.kind_event">
+        <MappingFragment StoreEntitySet="kind_event">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log_event">
+      <EntityTypeMapping TypeName="MonitoringModel.log_event">
+        <MappingFragment StoreEntitySet="log_event">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="author_id" ColumnName="author_id" />
+          <ScalarProperty Name="kind_event_id" ColumnName="kind_event_id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="IP_adress_object" ColumnName="IP_adress_object" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="message">
+      <EntityTypeMapping TypeName="MonitoringModel.message">
+        <MappingFragment StoreEntitySet="message">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="recipient_id" ColumnName="recipient_id" />
+          <ScalarProperty Name="author_id" ColumnName="author_id" />
+          <ScalarProperty Name="date_create" ColumnName="date_create" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="monitoring">
+      <EntityTypeMapping TypeName="MonitoringModel.monitoring">
+        <MappingFragment StoreEntitySet="monitoring">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="date_start" ColumnName="date_start" />
+          <ScalarProperty Name="date_end" ColumnName="date_end" />
+          <ScalarProperty Name="number_experts_one_site" ColumnName="number_experts_one_site" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ownership_type">
+      <EntityTypeMapping TypeName="MonitoringModel.ownership_type">
+        <MappingFragment StoreEntitySet="ownership_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rating">
+      <EntityTypeMapping TypeName="MonitoringModel.Rating">
+        <MappingFragment StoreEntitySet="Rating">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sum" ColumnName="sum" />
+          <ScalarProperty Name="monitoring_id" ColumnName="monitoring_id" />
+          <ScalarProperty Name="audit_object_id" ColumnName="audit_object_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rating_attendance">
+      <EntityTypeMapping TypeName="MonitoringModel.rating_attendance">
+        <MappingFragment StoreEntitySet="rating_attendance">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="audit_object_id" ColumnName="audit_object_id" />
+          <ScalarProperty Name="visitors_number" ColumnName="visitors_number" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reviews_user">
+      <EntityTypeMapping TypeName="MonitoringModel.reviews_user">
+        <MappingFragment StoreEntitySet="reviews_user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="author_name" ColumnName="author_name" />
+          <ScalarProperty Name="author_email" ColumnName="author_email" />
+          <ScalarProperty Name="date_create" ColumnName="date_create" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="curator_answer" ColumnName="curator_answer" />
+          <ScalarProperty Name="type_id" ColumnName="type_id" />
+          <ScalarProperty Name="audit_object_id" ColumnName="audit_object_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="MonitoringModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="site_experts">
+      <EntityTypeMapping TypeName="MonitoringModel.site_experts">
+        <MappingFragment StoreEntitySet="site_experts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="audit_object_id" ColumnName="audit_object_id" />
+          <ScalarProperty Name="expert_id" ColumnName="expert_id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="monitoring_id" ColumnName="monitoring_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="state_edu">
+      <EntityTypeMapping TypeName="MonitoringModel.state_edu">
+        <MappingFragment StoreEntitySet="state_edu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="state_reviews">
+      <EntityTypeMapping TypeName="MonitoringModel.state_reviews">
+        <MappingFragment StoreEntitySet="state_reviews">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="number" ColumnName="number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MonitoringModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="system_event_state">
+      <EntityTypeMapping TypeName="MonitoringModel.system_event_state">
+        <MappingFragment StoreEntitySet="system_event_state">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="number" ColumnName="number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="system_events">
+      <EntityTypeMapping TypeName="MonitoringModel.system_events">
+        <MappingFragment StoreEntitySet="system_events">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="technical_rating">
+      <EntityTypeMapping TypeName="MonitoringModel.technical_rating">
+        <MappingFragment StoreEntitySet="technical_rating">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="audit_object_id" ColumnName="audit_object_id" />
+          <ScalarProperty Name="site_accessibility" ColumnName="site_accessibility" />
+          <ScalarProperty Name="status_code" ColumnName="status_code" />
+          <ScalarProperty Name="using_HTTPS" ColumnName="using_HTTPS" />
+          <ScalarProperty Name="response_time" ColumnName="response_time" />
+          <ScalarProperty Name="robots_txt" ColumnName="robots_txt" />
+          <ScalarProperty Name="full_load" ColumnName="full_load" />
+          <ScalarProperty Name="sum" ColumnName="sum" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="img_title" ColumnName="img_title" />
+          <ScalarProperty Name="has_title" ColumnName="has_title" />
+          <ScalarProperty Name="w3c" ColumnName="w3c" />
+          <ScalarProperty Name="broken_links_count" ColumnName="broken_links_count" />
+          <ScalarProperty Name="broken_links_text" ColumnName="broken_links_text" />
+          <ScalarProperty Name="site_map" ColumnName="site_map" />
+          <ScalarProperty Name="site_map_ok" ColumnName="site_map_ok" />
+          <ScalarProperty Name="monitoring_id" ColumnName="monitoring_id" />
+          <ScalarProperty Name="nesting_level" ColumnName="nesting_level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="type_edu">
+      <EntityTypeMapping TypeName="MonitoringModel.type_edu">
+        <MappingFragment StoreEntitySet="type_edu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="type_education_institution">
+      <EntityTypeMapping TypeName="MonitoringModel.type_education_institution">
+        <MappingFragment StoreEntitySet="type_education_institution">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nane" ColumnName="nane" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="type_reviews">
+      <EntityTypeMapping TypeName="MonitoringModel.type_reviews">
+        <MappingFragment StoreEntitySet="type_reviews">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="MonitoringModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Patronumic" ColumnName="Patronumic" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="position" ColumnName="position" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users_rating">
+      <EntityTypeMapping TypeName="MonitoringModel.users_rating">
+        <MappingFragment StoreEntitySet="users_rating">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="audit_object_id" ColumnName="audit_object_id" />
+          <ScalarProperty Name="number_reviews" ColumnName="number_reviews" />
+          <ScalarProperty Name="number_processed_reviews" ColumnName="number_processed_reviews" />
+          <ScalarProperty Name="number_likes" ColumnName="number_likes" />
+          <ScalarProperty Name="sum" ColumnName="sum" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users_state">
+      <EntityTypeMapping TypeName="MonitoringModel.users_state">
+        <MappingFragment StoreEntitySet="users_state">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="number" ColumnName="number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

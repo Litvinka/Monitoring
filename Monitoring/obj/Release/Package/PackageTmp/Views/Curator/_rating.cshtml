@@ -1,0 +1,50 @@
+﻿@model Monitoring.Models.audit_object
+
+<div class="row">
+    <div class="row col-lg-5 first-row">
+        <div class="round-div btn-div">
+            <h4>Рейтинг сайта "@Model.education__institution.First(p=>p.audit_object_id==Model.id).short_name"</h4>
+            <div class="site-rating">
+                @*<div class="site-rating-icon">
+                    <img src="~/Content/img/icons/down-arrow.svg">
+                    <small class="red-rw">-3</small>
+                </div>*@
+                <p>В этом полугодии Ваш сайт на <b>@ViewBag.place позиции</b>.</p>
+                <input type="hidden" id="place_number" value="@ViewBag.place" />
+            </div>
+        </div>
+        @*<div class="round-div btn-div">
+                <h4>Посещаемость сайта</h4>
+                <div class="site-attendance">
+                    <span class="tilda">~</span>
+                    <p><b>1200</b> посетителей / месяц</p>
+                </div>
+
+            </div>*@
+    </div>
+    <div class="row col-lg-7 round-div btn-div">
+        <canvas id="chart"></canvas>
+    </div>
+</div>
+
+@if (Model.technical_rating.Count(p => p.monitoring.date_end < DateTime.Now)>0)
+{
+@*<div class="row">
+    <div class="col-12 round-div warning d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+            <span class="attention-sign">!</span>
+            <p>Выявлены ошибки на сайте</p>
+        </div>
+        <a href="/Curator/Monitoring" class="btn btn-secondary">Просмотреть</a>
+    </div>
+</div>*@
+    <div class="row">
+        <div class="col-12 round-div d-flex justify-content-between align-items-center">
+            <div>
+                <h4>Посмотреть данные последнего мониторинга</h4>
+                <p>Последний мониторинг состоялся @Model.technical_rating.OrderByDescending(p => p.monitoring.date_end).First(p => p.monitoring.date_end < DateTime.Now).monitoring.date_end.ToShortDateString()</p>
+            </div>
+            <a href="@Url.Action("Monitoring", "Curator", new { id = @Model.technical_rating.OrderByDescending(p => p.monitoring.date_end).First(p => p.monitoring.date_end < DateTime.Now).monitoring.id })" class="btn btn-secondary">Просмотреть</a>
+        </div>
+    </div>
+}

@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Распределение экспертов для проверки сайтов";
+}
+
+<div class="container round-div user-card" style="margin-top: 50px;">
+    <h4 class="form-title">Начало Мониторинга</h4>
+    <div class="col-md-12 number_sites">
+        <p>Количество сайтов: @ViewBag.count_site</p>
+        <p>Количество экспертов: @ViewBag.count_expert</p>
+        <form id="distribution_form" action="/Users/StartMonitoring" method="post" class="col-md-12">
+            <div class="row center-block btns-bottom">
+                <input type="submit" id="user-singin" class="btn btn-primary" value="Начать Мониторинг">
+            </div>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2b33fd95f6034ccdb8b8a1db05dc9548" Name="Diagram1">
+        <EntityTypeShape EntityType="MonitoringModel.area" Width="1.5" PointX="1.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.audit_object" Width="1.5" PointX="0.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.Coefficients" Width="1.5" PointX="9.25" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.Criteria" Width="1.5" PointX="11.5" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.curators_and_controlers" Width="1.5" PointX="8.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.department_subordination" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.district" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.education__institution" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.events" Width="1.5" PointX="13" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.experts" Width="1.5" PointX="8.75" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.Experts_comments" Width="1.5" PointX="13.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.experts_ratinng" Width="1.5" PointX="6" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.Groups" Width="1.5" PointX="9.25" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.kind_edu" Width="1.5" PointX="0.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.kind_event" Width="1.5" PointX="6" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.log_event" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.message" Width="1.5" PointX="16" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.monitoring" Width="1.5" PointX="3.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.ownership_type" Width="1.5" PointX="0.75" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.Rating" Width="1.5" PointX="6" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.rating_attendance" Width="1.5" PointX="3" PointY="27.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.reviews_user" Width="1.5" PointX="6" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.Role" Width="1.5" PointX="3.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.site_experts" Width="1.5" PointX="11.5" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.state_edu" Width="1.5" PointX="0.75" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.state_reviews" Width="1.5" PointX="3.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.system_event_state" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.system_events" Width="1.5" PointX="13" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.technical_rating" Width="1.5" PointX="9" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.type_edu" Width="1.5" PointX="0.75" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.type_education_institution" Width="1.5" PointX="0.75" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.type_reviews" Width="1.5" PointX="3.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.User" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.users_rating" Width="1.5" PointX="3" PointY="40.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MonitoringModel.users_state" Width="1.5" PointX="3.75" PointY="6.625" IsExpanded="true" />
+        <AssociationConnector Association="MonitoringModel.FK_district_area" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_education__institution_audit_object" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_experts_ratinng_audit_object" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_rating_attendance_audit_object" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_Rating_audit_object" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_reviews_user_audit_object" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_site_experts_audit_object1" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_technical_rating_audit_object" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_users_rating_audit_object" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_Criteria_Coefficients" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_Criteria_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_Experts_comments_Criteria" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_curators_and_controlers_education__institution" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_curators_and_controlers_User" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_education__institution_department_subordination" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_education__institution_district" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_education__institution_kind_edu" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_education__institution_ownership_type" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_education__institution_state_edu" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_education__institution_type_edu" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_education__institution_type_education_institution" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_experts_education__institution" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_events_system_event_state" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_events_User" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_experts_User" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_site_experts_experts" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_Experts_comments_site_experts" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_experts_ratinng_monitoring" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_log_event_kind_event" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_log_event_User" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_system_event_system_event_state" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_system_event_User" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_system_event_User1" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_Rating_monitoring" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_site_experts_monitoring" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_technical_rating_monitoring" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_reviews_user_state_reviews" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_reviews_user_type_reviews" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_system_events_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_system_events_system_event_state" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_system_events_User" ManuallyRouted="false" />
+        <AssociationConnector Association="MonitoringModel.FK_User_users_state" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

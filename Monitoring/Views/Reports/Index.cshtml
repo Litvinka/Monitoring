@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "Отчеты";
+}
+
+<div class="container" style="margin-top: 50px;">
+
+    <h2>Отчеты</h2>
+    <h4>Процент несоответствия Интернет-сайтов требованиям нормативно-правовых актов</h4>
+
+    <div class="row">
+        <div class="col-md-4">
+            <a href="@Url.Action("Report","Reports",new { type=1 })" class="report-btn">Учреждения высшего образования подведомственные Министерству образования</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Report","Reports",new { type=2 })" class="report-btn">Организации, подчиненные МО (кроме ВУЗ и управлений/отделов образования)</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Report","Reports",new { type=3 })" class="report-btn">Областные управления образования и отделы по образованию районов</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Report","Reports",new { type=4 })" class="report-btn">Интернет-сайты всех учреждений</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Area","Reports",new { type=1 })" class="report-btn">Интернет-сайты областных управлений образования и отделов по образованию районов</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Area","Reports",new { type=2 })" class="report-btn">Интернет-сайты всех учреждений по областям</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=1 })" class="report-btn">Группа 1 (Требования к размещению информации)</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=2 })" class="report-btn">Группа 2 (Структура)</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=3 })" class="report-btn">Группа 3 (Поиск)</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=4 })" class="report-btn">Группа 4 (Информация об органе (организации))</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=5 })" class="report-btn">Группа 5 (Обращения)</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=6 })" class="report-btn">Группа 6 (Контактная информация)</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=7 })" class="report-btn">Группа 7 (Административные процедуры)</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=8 })" class="report-btn">Группа 8 (Товары (работы, услуги))</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=9 })" class="report-btn">Группа 9 (Электронные обращения)</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=10 })" class="report-btn">Группа 10 (Навигация)</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=11 })" class="report-btn">Группа 11 (Дизайн)</a>
+        </div>
+    </div>
+
+    <h4>Дошкольные УО</h4>
+
+    <div class="row">
+        <div class="col-md-4">
+            <a href="@Url.Action("Area","Reports",new { type=3 })" class="report-btn">Интернет-сайты дошкольных учреждений образования по областям</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=1, type=1 })" class="report-btn">Дошкольные УО. Группа 1 (Требования к размещению информации)</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=2, type=1 })" class="report-btn">Дошкольные УО. Группа 2 (Структура)</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=3, type=1 })" class="report-btn">Дошкольные УО. Группа 3 (Поиск)</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=4, type=1 })" class="report-btn">Дошкольные УО. Группа 4 (Информация об органе (организации))</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=5, type=1 })" class="report-btn">Дошкольные УО. Группа 5 (Обращения)</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=6, type=1 })" class="report-btn">Дошкольные УО. Группа 6 (Контактная информация)</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=7, type=1 })" class="report-btn">Дошкольные УО. Группа 7 (Административные процедуры)</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=8, type=1 })" class="report-btn">Дошкольные УО. Группа 8 (Товары (работы, услуги))</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=9, type=1 })" class="report-btn">Дошкольные УО. Группа 9 (Электронные обращения)</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=10, type=1 })" class="report-btn">Дошкольные УО. Группа 10 (Навигация)</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("Groups","Reports",new { group=11, type=1 })" class="report-btn">Дошкольные УО. Группа 11 (Дизайн)</a>
+        </div>
+        <div class="col-md-4">
+            <a href="@Url.Action("ErrorListSite","Reports")" class="report-btn">Список УДО, где ошибок >=70%</a>
+        </div>
+    </div>
+
+    <h4>Все результаты</h4>
+
+    <div class="row">
+        <div class="col-md-4">
+            <a href="@Url.Action("AllResults","Reports")" class="report-btn">Все результаты по учреждениям</a>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Главная";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="start-text">
+            <h1 align="center">АИС Мониторинг</h1>
+            <p align="center">Автоматизированная информационная система аудита информационных ресурсов учреждений образования Республики Беларусь, оценки их состояния и актуальности предназначена для обеспечения соответствия официальных информационных ресурсов (интернет-сайтов и порталов) учреждений образования и местных исполнительных и распорядительных органов в сфере образования Республики Беларусь требованиям нормативных правовых актов.</p>
+        </div>
+    </div>
+    <div class="row">
+        @Html.Action("_rating", "Home")
+    </div>
+    <div class="row">
+        <div class="start-text">
+            <p align="center">Вы можете оставить отзыв на любой сайт в нашей системе</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <form id="leave-feedback" method="post" class="round-div">
+                <div class="form-group">
+                    <label for="name">Имя:</label>
+                    <input type="text" class="form-control" id="name" name="name" required placeholder="Введите имя">
+                </div>
+                <div class="row">
+                    <div class="form-group col-12">
+                        <label for="email1">Email:</label>
+                        <input type="email" class="form-control" id="email1" name="email" required placeholder="Введите Email">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <!-- select -->
+                            <label for="enter-obl-edu">Область: </label>
+                            @Html.DropDownList("area", null, "", htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="enter-raion-edu">Район: </label>
+                            @Html.DropDownList("district", null, "", htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="enter-raion-edu">Тип УО: </label>
+                            @Html.DropDownList("type_edu", null, "", htmlAttributes: new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-12">
+                        <label for="enter_type_edu">Cайт учреждения: </label>
+                        <input type="text" id="enter_type_edu" name="enter_type_edu" class="form-control" placeholder="Начните вводить название" required>
+                    </div>
+                </div>
+                <div class="row type-feedback">
+                    <div class="col-12">
+                        <p>Тип отзыва</p>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-flex justify-content-between">
+                            <div class="form-check">
+                                <input type="radio" required value="2" class="form-check-input green" name="type" id="type-thanks">
+                                <label class="form-check-label" for="type-thanks">Благодарность</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" value="4" class="form-check-input blue" name="type" id="type-advice">
+                                <label class="form-check-label" for="type-advice">Предложение</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" value="1" class="form-check-input yellow" name="type" id="type-question">
+                                <label class="form-check-label" for="type-question">Вопрос</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" value="3" class="form-check-input red" name="type" id="type-error">
+                                <label class="form-check-label" for="type-error">Ошибка</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="message">Отзыв:</label>
+                            <textarea required class="text ui-widget-content ui-corner-all form-control" rows="10" id="message" name="message"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <button class="btn btn-primary">Отправить</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

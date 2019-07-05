@@ -1,0 +1,52 @@
+﻿@model Monitoring.Models.message
+
+@{
+    ViewBag.Title = "Просмотр сообщения";
+}
+
+<div id="dialog" class="">
+    <form method="post" id="send_answer">
+        <input type="hidden" value="@Model.author_id" name="recipient" />
+        <input type="hidden" value="@Model.recipient_id" name="author" />
+        <div class="row">
+            <div class="form-group col-12">
+                <label for="title_message">Тема:</label>
+                <input type="text" required class="form-control" name="title_message" id="title_message" value="@Model.title">
+            </div>
+            <div class="form-group col-12">
+                <label for="text_message">Сообщение:</label>
+                <textarea class="form-control" name="text_message" required id="text_message"></textarea>
+            </div>
+        </div>
+        <menu>
+            <button class="btn btn-danger" id="cancel">Отмена</button>
+            <button class="btn btn-success" type="submit" id="send_message_answer">Отправить</button>
+        </menu>
+    </form>
+</div>
+
+<div class="container" style="margin-top: 50px;">
+    <div class="one_event round-div">
+        <div class="row d-flex justify-content-between">
+            <input type="hidden" id="event_id" value="@Model.id" />
+            <p class="message_small_date">@Html.DisplayFor(model => model.date_create)</p>
+        </div>
+        <div class="row author-rw">
+            <h5>@Html.DisplayFor(model => model.title)</h5>
+        </div>
+        <div class="row text-rw">
+            @Html.DisplayFor(model => model.text)
+        </div>
+        <div class="row button-cover d-flex justify-content-end">
+            @if (Model.recipient_id == Convert.ToInt32(Session["user_id"]))
+            {
+                <a href="" class="btn btn-success">Ответить</a>
+            }
+        </div>
+    </div>
+
+</div>
+
+
+
+

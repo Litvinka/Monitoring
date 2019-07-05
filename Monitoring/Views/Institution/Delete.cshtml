@@ -1,0 +1,152 @@
+﻿@model Monitoring.Models.education__institution
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>education__institution</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.full_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.full_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.short_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.short_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OKPO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OKPO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UNP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UNP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.director)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.director)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.is_application)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.is_application)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.audit_object.title_site)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.audit_object.title_site)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.department_subordination.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.department_subordination.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.district.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.district.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kind_edu.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kind_edu.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ownership_type.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ownership_type.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.type_edu.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.type_edu.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.type_education_institution.nane)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.type_education_institution.nane)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

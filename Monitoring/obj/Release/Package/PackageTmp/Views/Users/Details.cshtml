@@ -1,0 +1,110 @@
+﻿@model Monitoring.Models.User
+
+@{
+    ViewBag.Title = "Просмотр информации о пользователе";
+}
+
+<div class="container round-div user-card" style="margin-top: 50px;">
+
+    <div class="row title">
+        <div class="d-flex align-items-center">
+            <div>
+                @if (Model.Photo != null)
+                {<img src="@Model.Photo" class="big userpic">}
+            </div>
+            <div>
+                <h4>@Html.DisplayFor(model => model.Surname) @Html.DisplayFor(model => model.Name) @Html.DisplayFor(model => model.Patronumic)</h4>
+                <p><span class="role"></span>@Html.DisplayFor(model => model.Role.name)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row personal-info">
+        <div class="d-flex">
+            <div>
+                <img src="~/Content/img/icons/user.svg" class="icon">
+            </div>
+            <div class="d-flex">
+                <p>Email: <a href="mailto:@Html.DisplayFor(model => model.email)">@Html.DisplayFor(model => model.email)</a></p>
+                <p>
+                    @if (Model.phone != null)
+                    {
+                        Write("Телефон:");<a> @Model.phone</a> 
+                    }
+            </p>
+            </div>
+        </div>
+    </div>
+
+    @if ((Model.role_id == 2 || Model.role_id == 3) && Model.curators_and_controlers.FirstOrDefault(p => p.curator_id == Model.id) != null && Model.curators_and_controlers.FirstOrDefault(p => p.curator_id == Model.id).education__institution!=null)
+    {
+    <div class="row">
+        <div class="d-flex company-info">
+            <div>
+                <img src="~/Content/img/icons/home-button.svg" class="icon">
+            </div>
+            <div class="d-flex">
+                <p>Учреждение: @Model.curators_and_controlers.FirstOrDefault(p => p.curator_id == Model.id).education__institution.full_name</p>
+                <p>Сайт: <a target="_blank" href="http://@Model.curators_and_controlers.FirstOrDefault(p => p.curator_id == Model.id).education__institution.audit_object.adress_site">@Model.curators_and_controlers.FirstOrDefault(p => p.curator_id == Model.id).education__institution.audit_object.adress_site</a></p>
+            </div>
+        </div>
+    </div>
+    }
+
+    @if (Model.id == Convert.ToInt32(Session["user_id"]))
+    {
+        <div class="row center-block btns-bottom">
+            <a href="@Url.Action("Edit","Users",new { id=Model.id})" class="btn btn-primary">Изменить данные</a>
+        </div>
+    }
+
+    @if (Convert.ToInt32(Session["role"]) == 2 || Convert.ToInt32(Session["role"]) == 3)
+    {
+        @Html.Action("_SiteList", "Curator");
+    }
+
+</div>
+
+
+@if (ViewBag.user != null && Convert.ToInt32(Session["user_id"])!=1)
+{
+    <div class="container round-div user-card" style="margin-top: 50px;">
+
+        <div class="row title">
+            <div class="d-flex align-items-center">
+                <div>
+                    @if (ViewBag.user.Photo != null)
+                {<img src="@ViewBag.user.Photo" class="big userpic">}
+                </div>
+                <div>
+                    <h4>@ViewBag.user.Surname @ViewBag.user.Name @if (ViewBag.user.Patronumic != null) { @ViewBag.user.Patronumic }</h4>
+                    <p><span class="role"></span>@ViewBag.user.Role.name</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row personal-info">
+            <div class="d-flex">
+                <div>
+                    <img src="~/Content/img/icons/user.svg" class="icon">
+                </div>
+                <div class="d-flex">
+                    <p>Email: <a href="mailto:@ViewBag.user.email">@ViewBag.user.email</a></p>
+                    <p>
+                        @if (ViewBag.user.phone != null)
+                        {
+                            Write("Телефон:");<a> @ViewBag.user.phone</a>
+                        }
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <a href="@Url.Action("ChangeProfile","Users",new {user=ViewBag.user.id })" class="btn btn-primary">Войти на сайт как @ViewBag.user.Role.name</a>
+
+    </div>
+}
+
+
+
+     

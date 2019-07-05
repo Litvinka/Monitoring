@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Monitoring.Models.Rating>
+
+<table class="table table-bordered table-striped rating">
+    <thead>
+        <tr>
+            <th>№</th>
+            <th>Cайт</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Count(); ++i)
+        {
+        <tr>
+            <td>@(i+1)</td>
+            <td><a target="_blank" href="http://@Model.ElementAt(i).audit_object.adress_site">@Model.ElementAt(i).audit_object.education__institution.First(p=>p.audit_object_id== @Model.ElementAt(i).audit_object_id).full_name</a></td>
+        </tr>
+        }
+</table>

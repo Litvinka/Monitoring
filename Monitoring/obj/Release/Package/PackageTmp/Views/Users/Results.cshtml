@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Monitoring.Models.audit_object>
+
+@{
+    ViewBag.Title = "Результаты";
+}
+<div class="container">
+
+    @*<div class="row">
+        <h3>Подчиненные МО</h3>
+        <div class="col-md-4">
+            <h4>ВУЗ</h4>
+            <p> &#60;20 минусов: <span class="bg-success">@Model.Where(p=>p.site_experts.FirstOrDefault(s=>s.Experts_comments.Count(l=>l.answer==0)<20)!=null).Count()</span></p>
+        </div>
+        <div class="col-md-4">
+            <h4>Областные управления образования и отделы по образованию районов</h4>
+        </div>
+        <div class="col-md-4">
+            <h4>Организации, подчиненные МО (кроме ВУЗ и управлений/отделов образования)</h4>
+        </div>
+    </div>*@
+
+</div>

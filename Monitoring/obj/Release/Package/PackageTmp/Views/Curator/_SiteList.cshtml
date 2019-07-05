@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Monitoring.Models.audit_object>
+
+<h5>Список сайтов:</h5>
+<ul class="curator_site_list">
+    @foreach (var item in Model)
+    {
+        if (item.id == Convert.ToInt32(Session["curator_site_id"]))
+        {
+            <li>@Html.DisplayFor(modelItem => item.title_site) - @Html.DisplayFor(modelItem => item.adress_site) </li>
+        }
+        else
+        {
+            <li>@Html.DisplayFor(modelItem => item.title_site) - @Html.DisplayFor(modelItem => item.adress_site) <a href="@Url.Action("ChangeSite","Curator", new {site=item.id})" class="btn-success">Включить</a></li>
+        }
+    }
+</ul>
+
+

@@ -1,0 +1,108 @@
+﻿@model Monitoring.Models.technical_rating
+@{
+    ViewBag.Title = "Мониторинг";
+}
+
+<div class="container" style="margin-top: 50px;">
+
+    @if (Model != null)
+    {<h4 class="text-center">@Model.audit_object.adress_site</h4>}
+
+    <div class="row col-12">
+
+       @if (Model != null)
+       {
+
+        <aside class="col-3 round-div">
+            <h4>История</h4>
+            @Html.Action("_DateMonitoring", "Curator")
+
+        </aside>
+
+        <div class="col-md-9">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Критерий</td>
+                        @*<td>&nbsp;</td>*@
+                        <td>Значение</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Доступность сайта</td>
+                        <td>@Model.site_accessibility, мс</td>
+                    </tr>
+                    <tr>
+                        <td>Код ответа HTTP</td>
+                        <td>@if (Model.status_code.Contains("True")) { Write("Доступен"); } else { Write("Не доступен"); }</td>
+                    </tr>
+                    <tr>
+                        <td>Использование HTTPS</td>
+                        <td>@if (Model.using_HTTPS.Contains("True")) { Write("Да"); } else { Write("Нет"); }</td>
+                    </tr>
+                    <tr>
+                        <td>Время отклика</td>
+                        <td>@Model.response_time, мс</td>
+                    </tr>
+                    <tr>
+                        <td>Время полной загрузки сайта</td>
+                        <td>@Model.full_load, мс</td>
+                    </tr>
+                    <tr>
+                        <td>Наличие подписей картинок</td>
+                        <td>@if (Model.img_title.Contains("True")) { Write("Да"); } else { Write("Нет"); }</td>
+                    </tr>
+                    <tr>
+                        <td>Наличие заголовка</td>
+                        <td>@if (Model.img_title.Contains("True")) { Write("Да"); } else { Write("Нет"); }</td>
+                    </tr>
+                    <tr>
+                        <td>Файл robot.txt</td>
+                        <td>@if (Model.robots_txt.Contains("True")) { Write("Да"); } else { Write("Нет"); }</td>
+                    </tr>
+                    <tr>
+                        <td>Максимальный уровень вложенности</td>
+                        <td>@Model.nesting_level</td>
+                    </tr>
+                    <tr>
+                        <td>Количество битых ссылок</td>
+                        <td>@Model.broken_links_count</td>
+                    </tr>
+                    <tr>
+                        <td>Список битых ссылок</td>
+                        <td>@Model.broken_links_text</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="rez_exp_rt col-md-12">
+                <h3>Результаты экспертного рейтинга:</h3>
+                @if (Model.audit_object.experts_ratinng.Count() > 0)
+                {
+                foreach (var i in ViewBag.groups)
+                {
+                    <div class="block_experts">
+                        <div class="btn-primary blocks" data-toggle="collapse" data-target="#block_@i.id">@i.name</div>
+                        <div id="block_@i.id" class="collapse">
+                            @Html.Action("_answer_end", "Curator", new { site_id = Model.audit_object_id, group_id = i.id, m = ViewBag.monitoring })
+                        </div>
+                    </div>
+
+                    }
+                }
+                else
+                {
+                    <p>Экспертный рейтинг сайта не проводился</p>
+                }
+            </div>
+
+        </div>
+       }
+       else
+       {
+           <p>Критерии и результаты оценки будут доступны после проведения анализа.</p>
+       }
+    </div>
+</div>
+

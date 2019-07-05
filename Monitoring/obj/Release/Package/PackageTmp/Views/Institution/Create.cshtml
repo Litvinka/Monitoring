@@ -1,0 +1,158 @@
+﻿@model Monitoring.Models.education__institution
+
+@{
+    ViewBag.Title = "Добавление организации";
+}
+
+<div class="container">
+    <form id="user-reg-form" method="post" class="round-div col-md-12">
+        <h4 class="form-title">Добавление новой организации</h4>
+        <!-- РЕГИСТРАЦИЯ ОРГАНИЗАЦИИ -->
+        <div id="org-registration">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="full_name">Полное наименование: </label>
+                        @Html.EditorFor(model => model.full_name, new { htmlAttributes = new { @class = "form-control", required=true } })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="enter-name-edu">Сокращенное наименование: </label>
+                        @Html.EditorFor(model => model.short_name, new { htmlAttributes = new { @class = "form-control"} })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="enter-type-edu">Тип учреждения: </label>
+                        @Html.DropDownList("type_edu_id", null, "", htmlAttributes: new { @class = "form-control", id= "enter-type-edu", required = true })
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="enter-type-edu">Вид учреждения: </label>
+                        @Html.DropDownList("kind_edu_id", null, "", htmlAttributes: new { @class = "form-control", id = "enter-type-edu", required = true })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <!-- select -->
+                        <label for="enter-obl-edu">Область: </label>
+                        @Html.DropDownList("area_id", null, "", htmlAttributes: new { @class = "form-control", id = "enter-obl-edu", required = true })
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="enter-raion-edu">Район: </label>
+                        @Html.DropDownList("district_id", null, "", htmlAttributes: new { @class = "form-control", id = "enter-raion-edu", required = true })
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="address">Адрес: </label>
+                        @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control", required = true } })
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email учреждения: </label>
+                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="phone">Телефон УО: </label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">+375</span>
+                            </div>
+                            @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control", id= "tel-edu" } })
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="email-edu">Руководитель: </label>
+                        @Html.EditorFor(model => model.director, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="audit_object_adress_site">Адрес сайта: </label>
+                        @Html.EditorFor(model => model.audit_object.adress_site, new { htmlAttributes = new { @class = "form-control", required=true } })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="UNP">УНП: </label>
+                        @Html.EditorFor(model => model.UNP, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="OKPO">ОКПО: </label>
+                        @Html.EditorFor(model => model.OKPO, new { htmlAttributes = new { @class = "form-control"} })
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="is_application">Наличие заявки: </label>
+                        <div class="organization_radio">
+                            <span>@Html.RadioButtonFor(m => m.is_application, "1") Да</span>
+                            <span>@Html.RadioButtonFor(m => m.is_application, "0", new { @checked = true }) Нет</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="ownership_type_id">Ведомственная подчиненность: </label>
+                        @Html.DropDownList("department_subordination_id", null, "", htmlAttributes: new { @class = "form-control"})
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="type_education_institution_id">Тип подчиненности: </label>
+                        @Html.DropDownList("type_education_institution_id", null, "", htmlAttributes: new { @class = "form-control"})
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="ownership_type_id">Форма собственности: </label>
+                        @Html.DropDownList("ownership_type_id", null, "", htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="row center-block btns-bottom">
+                <button class="btn btn-primary">Зарегистрировать</button>
+            </div>
+        </div>
+        <!-- МОДАЛЬНОЕ ОКНО -->
+        <div id="dialog" class="">
+            <p>
+                Заполните все поля формы.
+            </p>
+        </div>
+        <!-- МОДАЛЬНОЕ ОКНО -->
+        <!-- РЕГИСТРАЦИЯ ПОЛЬЗОВАТЕЛЯ -->
+    </form>
+</div>

@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Monitoring.Models.site_experts>
+
+<ul>
+    @foreach(var item in Model) { 
+    <li>
+        <a target="_blank" href="http://@item.audit_object.adress_site">@item.audit_object.adress_site</a>
+    </li>
+    }
+</ul>

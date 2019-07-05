@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Monitoring.Models.reviews_user>
+
+@{
+    ViewBag.Title = "Главная";
+}
+
+<div class="container cur-index" style="margin-top: 50px;">
+
+    @Html.Action("_rating", "Curator")
+
+
+    <div class="row index-review-title d-flex">
+        <div class="col-12">
+            <h4>Последние отзывы</h4>
+        </div>
+    </div>
+    @if (Model.Count() > 0)
+    {
+        <input type="hidden" id="audit_object__id" value="@Model.ElementAt(0).audit_object_id" />
+    }
+    <div class="row index-reviews row-flex">
+        @foreach (var item in Model)
+        {
+        <div class="col-4">
+            <div class="round-div">
+                <h5>@Html.DisplayFor(modelItem => item.author_name)</h5>
+                <p>@Html.DisplayFor(modelItem => item.text)</p>
+            </div>
+        </div>
+        }
+    </div>
+    <div class="row text-center margin-btm">
+        <div class="col-12 ">
+            <a href="/Curator/Reviews" class="btn btn-secondary">Все отзывы</a>
+        </div>
+    </div>
+
+</div>
+
+
+
+ 

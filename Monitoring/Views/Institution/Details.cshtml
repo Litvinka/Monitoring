@@ -1,0 +1,93 @@
+﻿@model Monitoring.Models.education__institution
+
+@{
+    ViewBag.Title = "Просмотр информации об органиации";
+}
+
+<div class="container round-div user-card" style="margin-top: 50px;">
+
+    <div class="row title">
+        <div class="">
+            <div>
+                @Model.full_name (@if (Model.short_name != null) { @Model.short_name})
+            </div>
+            @if (Model.curators_and_controlers.FirstOrDefault(p => p.education_institution_id == Model.id) != null)
+            {
+            <div>
+                Куратор: <a href="@Url.Action("Details", "Users", new { id = Model.curators_and_controlers.FirstOrDefault(p => p.education_institution_id == Model.id).User.id })">@Model.curators_and_controlers.FirstOrDefault(p => p.education_institution_id == Model.id).User.Surname @Model.curators_and_controlers.FirstOrDefault(p => p.education_institution_id == Model.id).User.Name </a>
+            </div>
+            }
+        </div>
+    </div>
+
+    <table>
+        <tr>
+            <td><b>Адрес:</b></td>
+            <td>@Html.DisplayFor(model => model.address)</td>
+        </tr>
+        <tr>
+            <td><b>Email:</b></td>
+            <td><a href="mailto:@Html.DisplayFor(model => model.email)">@Html.DisplayFor(model => model.email)</a></td>
+        </tr>
+        @if (Model.audit_object_id != null) { 
+            <tr>
+                <td><b>Сайт:</b></td>
+                <td><a target="_blank" href="http://@Model.audit_object.adress_site">@Model.audit_object.adress_site</a></td>
+            </tr>
+        }
+        <tr>
+            <td><b>Телефон УО:</b></td>
+            @if (Model.phone != null) { 
+                <td><a>@Html.DisplayFor(model => model.phone)</a></td>
+            }
+        </tr>
+        <tr>
+            <td><b>ОКПО:</b></td>
+            <td>@Html.DisplayFor(model => model.OKPO)</td>
+        </tr>
+        <tr>
+            <td><b>УНП:</b></td>
+            <td>@Html.DisplayFor(model => model.UNP)</td>
+        </tr>
+        <tr>
+            <td><b>Руководитель:</b></td>
+            <td>@Html.DisplayFor(model => model.director)</td>
+        </tr>
+        <tr>
+            <td><b>Наличие заявки:</b></td>
+            <td>@if (Model.is_application != null && Model.is_application == 1) { Write("Да"); } else { Write("Нет"); }</td>
+        </tr>
+        <tr>
+            <td><b>Область:</b></td>
+            <td>@Html.DisplayFor(model => model.district.area.name)</td>
+        </tr>
+        <tr>
+            <td><b>Район:</b></td>
+            <td>@Html.DisplayFor(model => model.district.name)</td>
+        </tr>
+        <tr>
+            <td><b>Вид УО:</b></td>
+            <td>@Html.DisplayFor(model => model.kind_edu.name)</td>
+        </tr>
+        <tr>
+            <td><b>Тип УО:</b></td>
+            <td>@Html.DisplayFor(model => model.type_edu.name)</td>
+        </tr>
+        <tr>
+            <td><b>Ведомственная подчиненность:</b></td>
+            <td>@Html.DisplayFor(model => model.department_subordination.name)</td>
+        </tr>
+        <tr>
+            <td><b>Форма собственности:</b></td>
+            <td>@Html.DisplayFor(model => model.ownership_type.name)</td>
+        </tr>
+    </table>
+
+    @if (Convert.ToInt32(Session["role"])==1 || Convert.ToInt32(Session["role"]) == 2 || (Convert.ToInt32(Session["role"]) == 3 && Convert.ToInt32(Session["edu_id"])==Model.id))
+    {
+        <div class="row center-block btns-bottom">
+            <a href="@Url.Action("Edit", "Institution", new { id = Model.id })" class="btn btn-primary">Изменить данные</a>
+        </div>
+    }
+
+</div>

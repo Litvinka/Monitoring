@@ -1,0 +1,112 @@
+﻿@model Monitoring.Models.User
+
+@{
+    ViewBag.Title = "Добавление нового пользователяe";
+}
+
+
+<div class="container">
+    <form id="user-reg-form" method="post" action="/Users/Create" class="round-div col-md-12 registration_user_form">
+        <h4 class="form-title">Добавление нового пользователя</h4>
+        <!-- РЕГИСТРАЦИЯ ПОЛЬЗОВАТЕЛЯ -->
+        <div id="user-registration">
+            <div class="row">
+                <div class="form-group col-4">
+                    <label for="surname">Фамилия:</label>
+                    <input type="text" class="form-control" name="surname" required id="surname" placeholder="Введите фамилию">
+                </div>
+                <div class="form-group col-4">
+                    <label for="name">Имя:</label>
+                    <input type="text" class="form-control" name="name" required id="name" placeholder="Введите имя">
+                </div>
+                <div class="form-group col-4">
+                    <label for="patronymic">Отчество:</label>
+                    <input type="text" class="form-control" name="patronymic" id="patronymic" placeholder="Введите отчество">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-4">
+                    <label for="email1">Email:</label>
+                    <input type="email" class="form-control" name="email" id="email1" required placeholder="Введите Email">
+                </div>
+                <div class="col-8">
+                    <label for="tel">Контактный телефон:</label>
+                    <div class="input-group mb-3 ">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">+375</span>
+                        </div>
+                        <input type="text" class="form-control" name="tel" id="tel">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>Пароль:</p>
+                </div>
+                <div class="col-12">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" required rel="gp" data-size="10" data-character-set="a-z,A-Z,0-9,#" name="password">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary getNewPass" type="button">Сгенерировать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-12">
+                    <p>Роль: </p>
+                </div>
+                <div class="col-12">
+                    <div class="d-flex" style="margin-bottom: 30px;">
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" required name="user-role" id="open-org-kur" value="2">
+                            <label class="form-check-label" for="open-org-kur">Куратор</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="user-role" id="open-org-kont" value="3">
+                            <label class="form-check-label" for="open-org-kont">Контролер</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="user-role" id="exp" value="4">
+                            <label class="form-check-label" for="exp">Эксперт</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" name="user-role" id="moder" value="5">
+                            <label class="form-check-label" for="moder">Модератор</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="div-org">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="enter-name-edu">Наименование учреждения: </label>
+                        <input type="text" id="enter-name-edu" name="name-edu" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row center-block btns-bottom">
+                <input type="submit" id="" class="btn btn-primary" value="Зарегистрировать">
+            </div>
+        </div>
+        <!-- МОДАЛЬНОЕ ОКНО -->
+        <div id="dialog" class="">
+            <p>
+                Заполните все поля формы.
+            </p>
+        </div>
+        <!-- МОДАЛЬНОЕ ОКНО -->
+        <!-- РЕГИСТРАЦИЯ ПОЛЬЗОВАТЕЛЯ -->
+    </form>
+    @*<div>
+        <a href="@Url.Action("Address","Users")" class="btn btn-danger">Заменить адреса</a>
+    </div>*@
+    @*<div>
+            <a href="@Url.Action("SendMessages","Users")" class="btn btn-danger">Отправить всем пользователям письма с паролями</a>
+    </div>*@
+</div>
+

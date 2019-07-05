@@ -1,0 +1,154 @@
+﻿@model IEnumerable<Monitoring.Models.education__institution>
+@{
+    if (ViewBag.type == 1)
+    {
+        ViewBag.Title = "Интернет-сайты областных управлений образования и отделов по образованию районов";
+    }
+    else if (ViewBag.type == 2)
+    {
+        ViewBag.Title = "Интернет-сайты всех учреждений по областям";
+    }
+}
+
+<div class="container" style="margin-top: 50px;">
+
+    <a href="/Reports/Index">Вернуться к отчетам</a>
+    <h4>Процент несоответствия Интернет-сайтов требованиям нормативно-правовых актов: <br/>
+        @ViewBag.Title
+    </h4>
+
+    <script>
+        var labels = [];
+    </script>
+
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">Области</th>
+                <th rowspan="2">Всего интернет-сайтов</th>
+                <th rowspan="2">из них проверено</th>
+                <th colspan="6">из них:</th>
+                <th rowspan="2">число непровереных сайтов</th>
+                <th rowspan="2">% от общего количества</th>
+            </tr>
+            <tr>
+                <th><=20% ошибок</th>
+                <th>% от общего количества</th>
+                <th>20% - 70% ошибок</th>
+                <th>% от общего количества</th>
+                <th>>=70% ошибок</th>
+                <th>% от общего количества</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.areas)
+            {
+            <tr>
+                <td>
+                    <script>labels.push("@item.name")</script>
+                @item.name</td>
+                <td>@Model.Count(p=>p.district.area_id==item.id)</td>
+                <td>@Model.Count(p => p.district.area_id == item.id && p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) > 0)</td>
+                <td>@Model.Count(p => p.district.area_id == item.id && p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) > 0 && (p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) <= 22))</td>
+                <td>@Math.Round((Model.Count(p => p.district.area_id == item.id && p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) > 0 && (p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) <= 22)) * (double)100) / Model.Count(p=> p.district.area_id == item.id), 2) %</td>
+                <td>@Model.Count(p => p.district.area_id == item.id && p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) > 0 && p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) > 22 && p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) < 78)</td>
+                <td>@Math.Round((Model.Count(p => p.district.area_id == item.id && p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) > 0 && p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) > 22 && p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) < 78) * (double)100) / Model.Count(p => p.district.area_id == item.id), 2) %</td>
+                <td>@Model.Count(p => p.district.area_id == item.id && p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) > 0 && p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) >= 78)</td>
+                <td>@Math.Round((Model.Count(p => p.district.area_id == item.id && p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) > 0 && p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) >= 78) * (double)100) / Model.Count(p => p.district.area_id == item.id), 2) %</td>
+                <td>@Model.Count(p => p.district.area_id == item.id && p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) == 0)</td>
+                <td>@Math.Round((Model.Count(p => p.district.area_id == item.id && p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) == 0) * (double)100) / Model.Count(p => p.district.area_id == item.id), 2) %</td>
+            </tr>
+            }
+            <tr>
+                <td><b>Всего по РБ:</b></td>
+                <td><b>@Model.Count()</b></td>
+                <td><b>@Model.Count(p => p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) > 0)</b></td>
+                <td><b>@Model.Count(p => p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) > 0 && (p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) <= 22))</b></td>
+                <td><b>@Math.Round((Model.Count(p => p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) > 0 && (p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) <= 22)) * (double)100) / Model.Count(), 2) %</b></td>
+                <td><b>@Model.Count(p => p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) > 0 && p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) > 22 && p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) < 78)</b></td>
+                <td><b>@Math.Round((Model.Count(p => p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) > 0 && p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) > 22 && p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) < 78) * (double)100) / Model.Count(), 2) %</b></td>
+                <td><b>@Model.Count(p => p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) > 0 && p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) >= 78)</b></td>
+                <td><b>@Math.Round((Model.Count(p => p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) > 0 && p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) >= 78) * (double)100) / Model.Count(), 2) %</b></td>
+                <td><b>@Model.Count(p => p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) == 0)</b></td>
+                <td><b>@Math.Round((Model.Count(p => p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) == 0) * (double)100) / Model.Count(), 2) %</b></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="row all_graphics">
+        <div class="col-md-4">
+            <canvas id="graphic1" width="400" height="400">
+            </canvas>
+        </div>
+        <div class="col-md-4">
+            <canvas id="graphic2" width="400" height="400"></canvas>
+        </div>
+        <div class="col-md-4">
+            <canvas id="graphic3" width="400" height="400"></canvas>
+        </div>
+        <div class="col-md-4">
+            <canvas id="graphic4" width="400" height="400"></canvas>
+        </div>
+        <div class="col-md-4">
+            <canvas id="graphic5" width="400" height="400"></canvas>
+        </div>
+        <div class="col-md-4">
+            <canvas id="graphic6" width="400" height="400"></canvas>
+        </div>
+        <div class="col-md-4">
+            <canvas id="graphic7" width="400" height="400"></canvas>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+
+<script>
+    var canv = [];
+    var myChart = [];
+    for (var i = 0; i < 7; ++i){
+        var name = "graphic" + (i + 1);
+        canv[i] = document.getElementById(name).getContext('2d');
+    }
+</script>
+@{ 
+    int i = 0;
+}
+@foreach (var item in ViewBag.areas) {
+<script>
+    myChart[@i] = new Chart(canv[@i], {
+        type: 'pie',
+        data: {
+            labels: ["<=20% ошибок", "20% - 70% ошибок", ">=70% ошибок", "% непровереных сайтов"],
+            datasets: [{
+                label: labels[@i],
+                data: [@Math.Round((Model.Count(p => p.district.area_id == item.id && p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) > 0 && (p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) <= 22)) * (double)100) / Model.Count(p=> p.district.area_id == item.id), 0),
+                @Math.Round((Model.Count(p => p.district.area_id == item.id && p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) > 0 && p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) > 22 && p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) < 78) * (double)100) / Model.Count(p => p.district.area_id == item.id), 0),
+                @Math.Round((Model.Count(p => p.district.area_id == item.id && p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) > 0 && p.audit_object.site_experts.First().Experts_comments.Count(s => s.answer == 0) >= 78) * (double)100) / Model.Count(p => p.district.area_id == item.id), 0),
+                @Math.Round((Model.Count(p => p.district.area_id == item.id && p.audit_object.Rating.Count(s => s.monitoring_id == ViewBag.monitoring) == 0) * (double)100) / Model.Count(p => p.district.area_id == item.id), 0)],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgb(211, 211, 211, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(255,99,132,1)',
+                    'rgb(211, 211, 211, 0.2)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "@item.name"
+            }
+        }
+    });
+    @(i++);
+</script> 
+}

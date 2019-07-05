@@ -1,0 +1,65 @@
+﻿@model Monitoring.Models.technical_rating
+
+@if (Model != null)
+{
+<table>
+    <thead>
+        <tr>
+            <td>Критерий</td>
+            <td>Значение</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Доступность сайта</td>
+            <td>@Model.site_accessibility, мс</td>
+        </tr>
+        <tr>
+            <td>Код ответа HTTP</td>
+            <td>@if (Model.status_code.Contains("True")) { Write("Доступен"); } else { Write("Не доступен"); }</td>
+        </tr>
+        <tr>
+            <td>Использование HTTPS</td>
+            <td>@if (Model.using_HTTPS.Contains("True")) { Write("Да"); } else { Write("Нет"); }</td>
+        </tr>
+        <tr>
+            <td>Время отклика</td>
+            <td>@Model.response_time, мс</td>
+        </tr>
+        <tr>
+            <td>Время полной загрузки сайта</td>
+            <td>@Model.full_load, мс</td>
+        </tr>
+        <tr>
+            <td>Наличие подписей картинок</td>
+            <td>@if (Model.img_title.Contains("True")) { Write("Да"); } else { Write("Нет"); }</td>
+        </tr>
+        <tr>
+            <td>Наличие заголовка</td>
+            <td>@if (Model.has_title.Contains("True")) { Write("Да"); } else { Write("Нет"); }</td>
+        </tr>
+        <tr>
+            <td>Файл robot.txt</td>
+            <td>@if (Model.robots_txt.Contains("True")) { Write("Да"); } else { Write("Нет"); }</td>
+        </tr>
+        <tr>
+            <td>Максимальный уровень вложенности</td>
+            <td>@Model.nesting_level</td>
+        </tr>
+        <tr>
+            <td>Количество битых ссылок</td>
+            <td>@Model.broken_links_count</td>
+        </tr>
+        <tr>
+            <td>Список битых ссылок</td>
+            <td>@Model.broken_links_text</td>
+        </tr>
+
+    </tbody>
+</table>
+}
+else
+{
+    <p>Технический рейтинг для данного сайта не проводился</p>
+}
+

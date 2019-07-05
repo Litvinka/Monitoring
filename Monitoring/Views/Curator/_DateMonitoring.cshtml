@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Monitoring.Models.monitoring>
+
+<ul class="navbar-nav mr-auto">
+    @foreach(var item in Model) { 
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("Monitoring", "Curator", new{ id=item.id})">от @item.date_end.ToShortDateString()</a>
+    </li>
+    }
+</ul>
+

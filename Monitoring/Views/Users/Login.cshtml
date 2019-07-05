@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Вход";
+}
+
+<div class="container start-text">
+    <h1 align="center">АИС Мониторинг</h1>
+    <p align="center">Автоматизированная информационная система аудита информационных ресурсов учреждений образования Республики Беларусь, оценки их состояния и актуальности предназначена для обеспечения соответствия официальных информационных ресурсов (интернет-сайтов и порталов) учреждений образования и местных исполнительных и распорядительных органов в сфере образования Республики Беларусь требованиям нормативных правовых актов.</p>
+    <div class="center-block">
+        <a class="help" href="/Home/Help"><img class="question-sign" src="~/Content/img/icons/question.svg">Справка</a>
+    </div>
+
+</div>
+
+@*<div class="container">
+    <p>Для входа как админ введите: admin@gmail.com   12345</p>
+    <p>Для входа как куратор введите: kurator@gmail.com   98765</p>
+    <p>Для входа как контролер введите: kontroler@gmail.com   17589</p>
+    <p>Для входа как эксперт введите: expert@gmail.com   1f456</p>
+    <p>Для входа как модератор введите: moderator@gmail.com   #1234</p>
+</div>*@
+
+<div class="user-reg-wrapper round-div">
+    <h4 align="center">Вход</h4>
+    <span class="error">@if (ViewBag.error != null) { Write(ViewBag.error); }</span>
+    <form id="user-singin-form" method="post" action="/Users/Login" class="col-md-12">
+        <div class="row">
+            <div class="form-group col-12">
+                <label for="email1">Email:</label>
+                <input type="email" class="form-control" name="email" id="email1" placeholder="Введите Email" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-12">
+                <label for="password">Пароль:</label>
+                <input type="password" class="form-control" name="password" id="password" placeholder="Введите пароль" required>
+            </div>
+        </div>
+        @if (Request.QueryString["step"] != null)
+        {
+            <div class="row">
+                <div class="form-group col-12">
+                    <label for="password">Роль:</label>
+                    <select name="role" class="form-control" id="role" required>
+                        <option value="3">Контролер</option>
+                        <option value="4">Эксперт</option>
+                    </select>
+                </div>
+            </div>
+        }
+        <div class="forgot-pass center-block">
+            <a class="help" href="/Users/RecoveryPassword/">Забыли пароль?</a>
+        </div>
+        <div class="row center-block btns-bottom">
+            <input type="submit" id="user-singin" class="btn btn-primary" value="Войти"/>
+        </div>
+        <!-- МОДАЛЬНОЕ ОКНО -->
+        <div id="dialog" class="round-div">
+            <p>
+                Заполните все поля формы.
+            </p>
+        </div>
+        <!-- МОДАЛЬНОЕ ОКНО -->
+    </form>
+</div>

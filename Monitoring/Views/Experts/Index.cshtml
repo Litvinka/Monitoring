@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Monitoring.Models.site_experts>
+
+@{
+    ViewBag.Title = "Список сайтов для проверки";
+}
+
+
+
+<div class="container round-div" style="margin-top: 50px;">
+    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Название</th>
+                <th>Адрес сайта</th>
+                <th>Статус</th>
+                <th>Дата поступления</th>
+                <th>Дата окончания (план)</th>
+                <th style="width:7%">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Count(); ++i)
+            {
+            <tr>
+                <td>@(i+1)</td>
+                <td>@Html.DisplayFor(modelItem => Model.ElementAt(i).audit_object.title_site)</td>
+                <td><a target="_blank" href="http://@Html.DisplayFor(modelItem => Model.ElementAt(i).audit_object.adress_site)">@Html.DisplayFor(modelItem => Model.ElementAt(i).audit_object.adress_site)</a></td>
+                <td>@if (Model.ElementAt(i).Experts_comments.FirstOrDefault(p=>p.site_experts_id==Model.ElementAt(i).id)==null) { Write("не проверен"); }else { Write("проверен"); }</td>
+                <td>@Convert.ToDateTime(Model.ElementAt(i).monitoring.date_start).ToShortDateString()</td>
+                <td>@Convert.ToDateTime(Model.ElementAt(i).monitoring.date_end).ToShortDateString()</td>
+                <td>
+                    <div class="btn-flex">
+                        <a href="@Url.Action("Details", "Experts", new { id=Model.ElementAt(i).id })" class="btn btn-info btn-xs btn-adm">Инфо</a>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>№</th>
+                <th>Название</th>
+                <th>Адрес сайта</th>
+                <th>Статус</th>
+                <th>Дата поступления</th>
+                <th>Дата окончания</th>
+                <th>&nbsp;</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+
+

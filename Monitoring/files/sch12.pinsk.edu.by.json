@@ -1,0 +1,1025 @@
+{
+  "userAgent": "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36",
+  "environment": {
+    "networkUserAgent": "Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5 Build/MRA58N) AppleWebKit/537.36(KHTML, like Gecko) Chrome/66.0.3359.30 Mobile Safari/537.36",
+    "hostUserAgent": "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36",
+    "benchmarkIndex": 658
+  },
+  "lighthouseVersion": "3.1.1",
+  "fetchTime": "2018-10-18T02:20:04.644Z",
+  "requestedUrl": "http://sch12.pinsk.edu.by/",
+  "finalUrl": "http://sch12.pinsk.edu.by/",
+  "runWarnings": [],
+  "audits": {
+    "is-on-https": {
+      "id": "is-on-https",
+      "title": "Does not use HTTPS",
+      "description": "All sites should be protected with HTTPS, even ones that don't handle sensitive data. HTTPS prevents intruders from tampering with or passively listening in on the communications between your app and your users, and is a prerequisite for HTTP/2 and many new web platform APIs. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/https).",
+      "score": 0,
+      "scoreDisplayMode": "binary",
+      "rawValue": false,
+      "displayValue": "131 insecure requests found",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "url",
+            "itemType": "url",
+            "text": "Insecure URL"
+          }
+        ],
+        "items": [
+          {
+            "url": "http://sch12.pinsk.edu.by/"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/css.aspx?guid=1132"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/css.aspx?guid=1142"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/css.aspx?guid=1152"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/css.aspx?guid=1162"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/css.aspx?guid=1172"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/css.aspx?guid=1182"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/css.aspx?guid=1262"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/js.aspx?guid=1013"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/js.aspx?guid=1023"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/js.aspx?guid=1033"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/js.aspx?guid=1043"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/js.aspx?guid=1053"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/Themes/tabs.css"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/WebResource.axd?d=sHKV1aLb-Jgvj4kWMDyCKC4tuV_7FZCzc0YnH7L2de34YSXIPBCd0fAKTqqg5E_H8fXiWzEyKKtK3RCZbNFmU5dq53701HWNX-3pRG4507dyAx27aWu8pfzMURyo8zIbfIHPzDKYdKafimi9-hBETw2&t=635975449856383728"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/WebResource.axd?d=UjNOxNtBM_h_W7_PDebnsIZ3RN4mZ_kcuYZwWagLGy7WY0-jUz9wc4OloPR7tOEGC9whw-HtnNbGH8HTHXtF_v537kOpthA5gDjTbEWUiSw1&t=635331764440000000"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/ScriptResource.axd?d=oUFkj52wtDpgLCRWKKkwNiCJbX8nyqRKmtrJKH9uolm0rrI2lc0YYMHnaOxkCSJdDMnjen4Xx9oJeel0AgzVF8umN7P6KqWVpIsVeGDY0hn2ybTloSFpWhhp1NCiKBZhH_cmzFvubdbaLZ6-hew9ZN0dDT2hP5ft-cUvKg0BFHXMy6eguhvg5RJ1zdyZYs2P0&t=42a7acab"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/ScriptResource.axd?d=9YYRwKq88FkC76EofTElq4WuBXlId339SdNs3sXKIYHBAX6MOls2ubfUqnz2WP8dXFKw_AQ86rMm2JHmei8NxjXH9HH14b6eSNKUMVn7NL1SmWNYNmqHCt1ZHqMjkN5ID1RTdDP9oAqtELmvy5Cl0uZ4jYyXY5AHpgEM96jCtFxuww35a58A3C6_5U7Gdjbw0&t=42a7acab"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/ScriptResource.axd?d=m_Yfw1CiL98gGob2wwKG8ivUVcShKYsK_j_T1W7DIW-sTWvaP6bQOF3slV-qDvlanvlSvIeT_EpbjsY2xYiRpqzwXMqut3vD3s2TBeK84Bi4H4u1ZmNUbz7eFhUDXyD_dpbwjhsl5YspHuDnI0b1jlDJ7NASDV2k6Wx8LXvl20w1&t=ffffffffb8896679"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/ScriptResource.axd?d=oEwnPaNPv7LHmVWfmpOAqqPqatNMI7YpZpFOaeUXFR4k9620tT2ah40jH2l0pfrCiddlIR_9NgfPsVt00sXqVTMynuBdsLPZx-gbXP-U_dEo2LQKDzZF11s4x4AsYwWqYgxOfQtW4kpAgERjTLkTEZTa4t1uDDtjOLZl5vbic5Q1&t=ffffffffb8896679"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/ScriptResource.axd?d=NWF4XpwOZK7IiBm7XcafCvcCToKERpeS-adw30jtBPyALz4iEpwbH5_gYN2VK0msfVF-_cCjAfi35fjrO05Jb_vmh0CTbdNZ4MLpKI6-1KlmSPdeB5_D0OptY_VOGfFzgJBOCvVlQGEZkokH_lC3gg2&t=ffffffffb8896679"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/ScriptResource.axd?d=ffr8Z9D1y9FJlvPCbYTjnlJGpLZ1aakWMS3QUuHbHpzhnz08W5rNl3F74IYdkrVO7FluyFsgdQIXbFX9W8UFJRkfyAC3IA1rZ3_3AQ7YYAhLALdF7j6-yc5aeb7Pgzyu_Nb8uMAHTJ0HQxKPokXTEBpHvmKLB4f719MhHJT9wpMQNYRc3B_EbjDQd9sIxUm-0&t=ffffffffb8896679"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/Ajax.asmx/jsdebug"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11363"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11373"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm_full.aspx?guid=2413"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=18613"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=19133"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=12273"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11743"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11393"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=20593"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=20583"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=20613"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=18783"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11733"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=15053"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11403"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11843"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11413"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11383"
+          },
+          {
+            "url": "http://bs.yandex.ru/informer/23073244/3_0_FFFFD2FF_FFE4B2FF_0_pageviews"
+          },
+          {
+            "url": "http://www.yandex.ru/cycounter?sch12.pinsk.edu.by"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=12243"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=15773"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=14333"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=12653"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11613"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11603"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm_full.aspx?guid=23693"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm_full.aspx?guid=25533"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm_full.aspx?guid=1763"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/ru/sm_full.aspx?guid=18183"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm_full.aspx?guid=23783"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm_full.aspx?guid=21263"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm_full.aspx?guid=21293"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm_full.aspx?guid=21283"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm_full.aspx?guid=21303"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=26203"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=28003"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=27983"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=27963"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=26983"
+          },
+          {
+            "url": "http://estu.by/images/Izbrannoe/2018/visafree_1.jpg"
+          },
+          {
+            "url": "http://estu.by/images/Izbrannoe/2018/900_greblya_0612.jpg"
+          },
+          {
+            "url": "http://estu.by/images/Izbrannoe/2018/16_main.jpg"
+          },
+          {
+            "url": "http://estu.by/images/Izbrannoe/2018/vxk640.jpg"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11513"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11503"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11493"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11483"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11473"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11813"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11803"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11793"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11463"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=24973"
+          },
+          {
+            "url": "http://mc.yandex.ru/metrika/watch.js"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=23623"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11293"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11303"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11313"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11323"
+          },
+          {
+            "url": "http://site.yandex.net/v2.0/js/all.js"
+          },
+          {
+            "url": "http://share.pluso.ru/pluso-like.js"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11983"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11333"
+          },
+          {
+            "url": "http://cdn.edu.by/wp/all/html5lightbox/lightbox-next.png"
+          },
+          {
+            "url": "http://cdn.edu.by/wp/all/html5lightbox/lightbox-prev.png"
+          },
+          {
+            "url": "http://cdn.edu.by/wp/all/html5lightbox/lightbox-close.png"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/Themes/tabs/technorati/tab-line.png"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/Themes/tabs/technorati/tab.png"
+          },
+          {
+            "url": "http://share.pluso.ru/process?act=counter&u=http%3A%2F%2Fsch12.pinsk.edu.by%2F&w=412&h=732&ref=&uid=3281896563158655179&k=72B8TQgBundefinedkPMRd7q&first=1"
+          },
+          {
+            "url": "http://counter.yadro.ru/hit;PLUSO?r;s412*732*24;uhttp%3A//sch12.pinsk.edu.by/;h%u0413%u0423%u041E%20%u0421%u0428%u211612%20%u0433.%u041F%u0438%u043D%u0441%u043A%u0430;1"
+          },
+          {
+            "url": "http://share.pluso.ru/img/plus.png"
+          },
+          {
+            "url": "http://share.pluso.ru/img/pluso-like/square/small/01.png"
+          },
+          {
+            "url": "http://kitbit.net/kb.js"
+          },
+          {
+            "url": "http://sch12.pinsk.edu.by/sm.aspx?guid=11353"
+          },
+          {
+            "url": "http://counter.yadro.ru/hit;PLUSO?q;r;s412*732*24;uhttp%3A//sch12.pinsk.edu.by/;h%u0413%u0423%u041E%20%u0421%u0428%u211612%20%u0433.%u041F%u0438%u043D%u0441%u043A%u0430;1"
+          },
+          {
+            "url": "http://kitbit.net/s.js?u=http%3A%2F%2Fsch12.pinsk.edu.by%2F"
+          },
+          {
+            "url": "http://kitbit.net/h.gif?r=&s=412*732*24&u=http%3A//sch12.pinsk.edu.by/&h=%u0413%u0423%u041E%20%u0421%u0428%u211612%20%u0433.%u041F%u0438%u043D%u0441%u043A%u0430%26kb%7E%7BUID%7D"
+          },
+          {
+            "url": "http://tag.digitaltarget.ru/processor.js?i=68083387105369"
+          },
+          {
+            "url": "http://tag.digitaltarget.ru/extensions/extension_1086.js?i=866725909015435"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/5246/i/i?i=766245461150433.361067505970887"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/6356/i/i?i=766245461150433.921082177203641"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/6350/i/i?i=766245461150433.354884005510973"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/6499/i/i?i=766245461150433.844720759786013"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/6510/i/i?i=766245461150433.709169396284324"
+          },
+          {
+            "url": "http://redirect.frontend.weborama.fr/redirect/standard?url=https%3A%2F%2Fdmg.digitaltarget.ru%2F1%2F6465%2Fi%2Fi%3Fa%3D735%26e%3D%7BWEBO_CID%7D"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/4027/i/i?i=766245461150433.753973361132978"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/6373/i/i?i=766245461150433.325523762343886"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/6374/i/i?i=766245461150433.964047418128158"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/6375/i/i?i=766245461150433.362104800716813"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/6376/i/i?i=766245461150433.162328082842022"
+          },
+          {
+            "url": "http://data.artlebedev.ru/1/4010/i/i"
+          },
+          {
+            "url": "http://cm.p.altergeo.ru/pixel?url=https%3A%2F%2Fdmg.digitaltarget.ru%2F1%2F2016%2Fi%2Fi%3Fa%3D216%26e%3D%24%7BUSER_ID%7D%26c%3Dss%3A216.up%3A%24%7BUSER_ID%7D.rs%3A1086.pc%3A%24%7BCATS_ID%7D%26i%3D%24%7BRANDOM%7D"
+          },
+          {
+            "url": "http://sync.omnidsp.com/match?src=amberdata"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/6418/i/i?i=766245461150433.781707638143424"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/6417/i/i?i=766245461150433.679370166154136"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/6416/i/i?i=766245461150433.356733615826189"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/6415/i/i?i=766245461150433.550438031700676"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/1086/i/i?i=766245461150433.707850992037891&a=86&e=5EFC831FCAEDC75B1282876402A98FE2&c=ss:86.up:5EFC831FCAEDC75B1282876402A98FE2.sync:up.xdua:duLdtZqrovpbjzQF_ACYKVgC.xps:xpsKumIghc8Qci6SymriMD9dD.dn:sch12__pinsk__edu__by.dn:edu__by.tg:.cr:"
+          },
+          {
+            "url": "http://redirect.frontend.weborama.fr/redirect/standard?url=https%3A%2F%2Fdmg.digitaltarget.ru%2F1%2F6465%2Fi%2Fi%3Fa%3D735%26e%3D%7BWEBO_CID%7D&bounce=1&random=2043266251"
+          },
+          {
+            "url": "http://data.artlebedev.ru/1/4010/i/i?q=scc"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/5246/i/i?i=766245461150433.361067505970887&q=scc"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/6356/i/i?i=766245461150433.921082177203641&q=scc"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/6350/i/i?i=766245461150433.354884005510973&q=scc"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/6499/i/i?i=766245461150433.844720759786013&q=scc"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/6510/i/i?i=766245461150433.709169396284324&q=scc"
+          },
+          {
+            "url": "http://cm.p.altergeo.ru/pixel?url=https%3A%2F%2Fdmg.digitaltarget.ru%2F1%2F2016%2Fi%2Fi%3Fa%3D216%26e%3D%24%7BUSER_ID%7D%26c%3Dss%3A216.up%3A%24%7BUSER_ID%7D.rs%3A1086.pc%3A%24%7BCATS_ID%7D%26i%3D%24%7BRANDOM%7D&cc=1"
+          },
+          {
+            "url": "http://dmg.digitaltarget.ru/1/4027/i/i?i=766245461150433.753973361132978&q=scc"
+          }
+        ]
+      }
+    },
+    "estimated-input-latency": {
+      "id": "estimated-input-latency",
+      "title": "Estimated Input Latency",
+      "description": "The score above is an estimate of how long your app takes to respond to user input, in milliseconds, during the busiest 5s window of page load. If your latency is higher than 50 ms, users may perceive your app as laggy. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/estimated-input-latency).",
+      "score": 0.86,
+      "scoreDisplayMode": "numeric",
+      "rawValue": 63.19999999999989,
+      "displayValue": "60 ms"
+    },
+    "time-to-first-byte": {
+      "id": "time-to-first-byte",
+      "title": "Reduce server response times (TTFB)",
+      "description": "Time To First Byte identifies the time at which your server sends a response. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/ttfb).",
+      "score": 0,
+      "scoreDisplayMode": "binary",
+      "rawValue": 2006.737,
+      "displayValue": "Root document took 2,010 ms",
+      "details": {
+        "type": "opportunity",
+        "overallSavingsMs": 1406.737,
+        "headings": [],
+        "items": []
+      }
+    },
+    "interactive": {
+      "id": "interactive",
+      "title": "Time to Interactive",
+      "description": "Interactive marks the time at which the page is fully interactive. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/consistently-interactive).",
+      "score": 0.52,
+      "scoreDisplayMode": "numeric",
+      "rawValue": 7115.9439999999995,
+      "displayValue": "7.1 s"
+    },
+    "bypass": {
+      "id": "bypass",
+      "title": "The page contains a heading, skip link, or landmark region",
+      "description": "Adding ways to bypass repetitive content lets keyboard users navigate the page more efficiently. [Learn more](https://dequeuniversity.com/rules/axe/2.2/bypass?application=lighthouse).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "rawValue": true,
+      "details": {
+        "type": "table",
+        "headings": [],
+        "items": []
+      }
+    },
+    "image-alt": {
+      "id": "image-alt",
+      "title": "Image elements do not have `[alt]` attributes",
+      "description": "Informative elements should aim for short, descriptive alternate text. Decorative elements can be ignored with an empty alt attribute. [Learn more](https://dequeuniversity.com/rules/axe/2.2/image-alt?application=lighthouse).",
+      "score": 0,
+      "scoreDisplayMode": "binary",
+      "rawValue": false,
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "node",
+            "itemType": "node",
+            "text": "Failing Elements"
+          }
+        ],
+        "items": [
+          {
+            "node": {
+              "type": "node",
+              "selector": "img[width=\"\\31 45\"]",
+              "path": "1,HTML,1,BODY,0,FORM,24,DIV,0,TABLE,0,TBODY,0,TR,2,TD,0,IMG",
+              "snippet": "<img src=\"sm_full.aspx?guid=2413\" width=\"145\" height=\"142\">",
+              "explanation": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": ":root",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,3,TD,1,DIV,1,DIV,1,DIV,0,DIV,0,DIV,1,DIV,0,A,0,IMG",
+              "snippet": "<img src=\"sm.aspx?guid=15773\">",
+              "explanation": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": "img[width=\"\\37 68\"]",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,3,TD,1,DIV,3,DIV,3,P,0,IMG",
+              "snippet": "<img src=\"http://sch12.pinsk.edu.by/ru/sm_full.aspx?guid=18183\" width=\"768\" height=\"128\">",
+              "explanation": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": ":root",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,3,TD,1,DIV,4,DIV,1,DIV,1,DIV,0,DIV,2,TABLE,0,TBODY,0,TR,0,TD,0,A,0,IMG",
+              "snippet": "<img width=\"50\" src=\"sm.aspx?guid=26203\">",
+              "explanation": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": ":root",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,3,TD,1,DIV,4,DIV,1,DIV,1,DIV,0,DIV,5,TABLE,0,TBODY,0,TR,0,TD,0,A,0,IMG",
+              "snippet": "<img width=\"50\" src=\"sm.aspx?guid=28003\">",
+              "explanation": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": ":root",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,3,TD,1,DIV,4,DIV,1,DIV,1,DIV,0,DIV,8,TABLE,0,TBODY,0,TR,0,TD,0,A,0,IMG",
+              "snippet": "<img width=\"50\" src=\"sm.aspx?guid=27983\">",
+              "explanation": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": ":root",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,3,TD,1,DIV,4,DIV,1,DIV,1,DIV,0,DIV,11,TABLE,0,TBODY,0,TR,0,TD,0,A,0,IMG",
+              "snippet": "<img width=\"50\" src=\"sm.aspx?guid=27963\">",
+              "explanation": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": ":root",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,3,TD,1,DIV,4,DIV,1,DIV,1,DIV,0,DIV,14,TABLE,0,TBODY,0,TR,0,TD,0,A,0,IMG",
+              "snippet": "<img width=\"50\" src=\"sm.aspx?guid=26983\">",
+              "explanation": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element has no title attribute or the title attribute is empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          }
+        ],
+        "impact": "critical",
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag111",
+          "section508",
+          "section508.22.a"
+        ]
+      }
+    },
+    "link-name": {
+      "id": "link-name",
+      "title": "Links do not have a discernible name",
+      "description": "Link text (and alternate text for images, when used as links) that is discernible, unique, and focusable improves the navigation experience for screen reader users. [Learn more](https://dequeuniversity.com/rules/axe/2.2/link-name?application=lighthouse).",
+      "score": 0,
+      "scoreDisplayMode": "binary",
+      "rawValue": false,
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "node",
+            "itemType": "node",
+            "text": "Failing Elements"
+          }
+        ],
+        "items": [
+          {
+            "node": {
+              "type": "node",
+              "selector": ".pluso-more",
+              "path": "1,HTML,1,BODY,0,FORM,21,DIV,0,TABLE,0,TBODY,0,TR,4,TD,1,DIV,0,DIV,0,SPAN,5,A",
+              "snippet": "<a href=\"http://pluso.ru/\" class=\"pluso-more\"></a>",
+              "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": "div:nth-child(2) > a[target=\"_blank\"]:nth-child(2)",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,1,TD,1,DIV,2,A",
+              "snippet": "<a href=\"http://sch12.pinsk.edu.by/ru/main.aspx?guid=2191\" target=\"_blank\"><img src=\"sm.aspx?guid=18613\" width=\"160\" height=\"60\" alt=\"\" title=\"\"></a>",
+              "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": "a[href$=\"www.institutemvd.by\"]",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,1,TD,3,DIV,2,A",
+              "snippet": "<a href=\"http://www.institutemvd.by\" target=\"_blank\"><img src=\"sm.aspx?guid=20593\" width=\"160\" height=\"60\" alt=\"\" title=\"\"></a>",
+              "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": "a[href$=\"academy.mia.by\"]",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,1,TD,3,DIV,3,A",
+              "snippet": "<a href=\"http://academy.mia.by\" target=\"_blank\"><img src=\"sm.aspx?guid=20583\" width=\"160\" height=\"60\" alt=\"\" title=\"\"></a>",
+              "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": "a[href$=\"brpo.by\"]",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,1,TD,3,DIV,5,A",
+              "snippet": "<a href=\"http://brpo.by\" target=\"_blank\"><img src=\"sm.aspx?guid=18783\" width=\"160\" height=\"60\" alt=\"\" title=\"\"></a>",
+              "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": "a[target=\"_blank\"]:nth-child(12)",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,1,TD,3,DIV,11,A",
+              "snippet": "<a href=\"http://sch12.pinsk.edu.by/ru/main.aspx?guid=42711\" target=\"_blank\"><img src=\"sm.aspx?guid=11383\" width=\"160\" height=\"50\" alt=\"\" title=\"\"></a>",
+              "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": ".bxslider > div:nth-child(2) > a",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,3,TD,1,DIV,1,DIV,1,DIV,0,DIV,0,DIV,1,DIV,0,A",
+              "snippet": "<a href=\"http://sch12.pinsk.edu.by/ru/main.aspx?guid=43411\"><img src=\"sm.aspx?guid=15773\"></a>",
+              "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": "td:nth-child(3) > a",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,3,TD,1,DIV,3,DIV,14,TABLE,0,TBODY,1,TR,2,TD,0,A",
+              "snippet": "<a href=\"http://sch12.pinsk.edu.by/ru/main.aspx?guid=1391\"><img src=\"sm_full.aspx?guid=21293\" alt=\"\" vspace=\"\" align=\"\" hspace=\"\" width=\"157\" height=\"192\"></a>",
+              "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": "td:nth-child(5) > a",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,3,TD,1,DIV,3,DIV,14,TABLE,0,TBODY,1,TR,4,TD,0,A",
+              "snippet": "<a href=\"http://sch12.pinsk.edu.by/ru/main.aspx?guid=43941\"><img src=\"sm_full.aspx?guid=21283\" alt=\"\" vspace=\"\" align=\"\" hspace=\"\" width=\"160\" height=\"182\"></a>",
+              "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": ":root",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,3,TD,1,DIV,3,DIV,14,TABLE,0,TBODY,1,TR,6,TD,0,A",
+              "snippet": "<a href=\"main.aspx?guid=1981\"><img src=\"sm_full.aspx?guid=21303\" alt=\"\" vspace=\"\" align=\"\" hspace=\"\" width=\"272\" height=\"157\"></a>",
+              "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": ":root",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,3,TD,1,DIV,4,DIV,1,DIV,1,DIV,0,DIV,2,TABLE,0,TBODY,0,TR,0,TD,0,A",
+              "snippet": "<a href=\"main.aspx?guid=26203\"><img width=\"50\" src=\"sm.aspx?guid=26203\"></a>",
+              "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": ":root",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,3,TD,1,DIV,4,DIV,1,DIV,1,DIV,0,DIV,5,TABLE,0,TBODY,0,TR,0,TD,0,A",
+              "snippet": "<a href=\"main.aspx?guid=28003\"><img width=\"50\" src=\"sm.aspx?guid=28003\"></a>",
+              "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": ":root",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,3,TD,1,DIV,4,DIV,1,DIV,1,DIV,0,DIV,8,TABLE,0,TBODY,0,TR,0,TD,0,A",
+              "snippet": "<a href=\"main.aspx?guid=27983\"><img width=\"50\" src=\"sm.aspx?guid=27983\"></a>",
+              "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": ":root",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,3,TD,1,DIV,4,DIV,1,DIV,1,DIV,0,DIV,11,TABLE,0,TBODY,0,TR,0,TD,0,A",
+              "snippet": "<a href=\"main.aspx?guid=27963\"><img width=\"50\" src=\"sm.aspx?guid=27963\"></a>",
+              "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          },
+          {
+            "node": {
+              "type": "node",
+              "selector": ":root",
+              "path": "1,HTML,1,BODY,0,FORM,30,DIV,0,TABLE,0,TBODY,0,TR,3,TD,1,DIV,4,DIV,1,DIV,1,DIV,0,DIV,14,TABLE,0,TBODY,0,TR,0,TD,0,A",
+              "snippet": "<a href=\"main.aspx?guid=26983\"><img width=\"50\" src=\"sm.aspx?guid=26983\"></a>",
+              "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty or not visible\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\""
+            }
+          }
+        ],
+        "impact": "serious",
+        "tags": [
+          "cat.name-role-value",
+          "wcag2a",
+          "wcag111",
+          "wcag412",
+          "wcag244",
+          "section508",
+          "section508.22.a"
+        ]
+      }
+    },
+    "http-status-code": {
+      "id": "http-status-code",
+      "title": "Page has successful HTTP status code",
+      "description": "Pages with unsuccessful HTTP status codes may not be indexed properly. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/successful-http-code).",
+      "score": 1,
+      "scoreDisplayMode": "binary",
+      "rawValue": true
+    },
+    "robots-txt": {
+      "id": "robots-txt",
+      "title": "robots.txt is valid",
+      "description": "If your robots.txt file is malformed, crawlers may not be able to understand how you want your website to be crawled or indexed.",
+      "score": null,
+      "scoreDisplayMode": "not-applicable",
+      "rawValue": true
+    }
+  },
+  "configSettings": {
+    "output": [
+      "json"
+    ],
+    "maxWaitForLoad": 45000,
+    "throttlingMethod": "simulate",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "auditMode": false,
+    "gatherMode": false,
+    "disableStorageReset": false,
+    "disableDeviceEmulation": false,
+    "locale": "en-US",
+    "blockedUrlPatterns": null,
+    "additionalTraceCategories": null,
+    "extraHeaders": null,
+    "onlyAudits": [
+      "time-to-first-byte",
+      "http-status-code",
+      "is-on-https",
+      "estimated-input-latency",
+      "interactive",
+      "image-alt",
+      "bypass",
+      "link-name",
+      "robots-txt"
+    ],
+    "onlyCategories": null,
+    "skipAudits": null
+  },
+  "categories": {
+    "performance": {
+      "title": "Performance",
+      "auditRefs": [
+        {
+          "id": "interactive",
+          "weight": 5,
+          "group": "metrics"
+        },
+        {
+          "id": "estimated-input-latency",
+          "weight": 0,
+          "group": "metrics"
+        },
+        {
+          "id": "time-to-first-byte",
+          "weight": 0,
+          "group": "load-opportunities"
+        }
+      ],
+      "id": "performance",
+      "score": 0.52
+    },
+    "pwa": {
+      "title": "Progressive Web App",
+      "description": "These checks validate the aspects of a Progressive Web App, as specified by the baseline [PWA Checklist](https://developers.google.com/web/progressive-web-apps/checklist).",
+      "manualDescription": "These checks are required by the baseline [PWA Checklist](https://developers.google.com/web/progressive-web-apps/checklist) but are not automatically checked by Lighthouse. They do not affect your score but it's important that you verify them manually.",
+      "auditRefs": [
+        {
+          "id": "is-on-https",
+          "weight": 2
+        }
+      ],
+      "id": "pwa",
+      "score": 0
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "These checks highlight opportunities to [improve the accessibility of your web app](https://developers.google.com/web/fundamentals/accessibility). Only a subset of accessibility issues can be automatically detected so manual testing is also encouraged.",
+      "manualDescription": "These items address areas which an automated testing tool cannot cover. Learn more in our guide on [conducting an accessibility review](https://developers.google.com/web/fundamentals/accessibility/how-to-review).",
+      "auditRefs": [
+        {
+          "id": "bypass",
+          "weight": 10,
+          "group": "a11y-describe-contents"
+        },
+        {
+          "id": "image-alt",
+          "weight": 8,
+          "group": "a11y-correct-attributes"
+        },
+        {
+          "id": "link-name",
+          "weight": 9,
+          "group": "a11y-element-names"
+        }
+      ],
+      "id": "accessibility",
+      "score": 0.37
+    },
+    "best-practices": {
+      "title": "Best Practices",
+      "auditRefs": [
+        {
+          "id": "is-on-https",
+          "weight": 1
+        }
+      ],
+      "id": "best-practices",
+      "score": 0
+    },
+    "seo": {
+      "title": "SEO",
+      "description": "These checks ensure that your page is optimized for search engine results ranking. There are additional factors Lighthouse does not check that may affect your search ranking. [Learn more](https://support.google.com/webmasters/answer/35769).",
+      "manualDescription": "Run these additional validators on your site to check additional SEO best practices.",
+      "auditRefs": [
+        {
+          "id": "http-status-code",
+          "weight": 1,
+          "group": "seo-crawl"
+        },
+        {
+          "id": "robots-txt",
+          "weight": 0,
+          "group": "seo-crawl"
+        }
+      ],
+      "id": "seo",
+      "score": 1
+    }
+  },
+  "categoryGroups": {
+    "metrics": {
+      "title": "Metrics"
+    },
+    "load-opportunities": {
+      "title": "Opportunities",
+      "description": "These optimizations can speed up your page load."
+    },
+    "diagnostics": {
+      "title": "Diagnostics",
+      "description": "More information about the performance of your application."
+    },
+    "a11y-color-contrast": {
+      "title": "Color Contrast Is Satisfactory",
+      "description": "These are opportunities to improve the legibility of your content."
+    },
+    "a11y-describe-contents": {
+      "title": "Elements Describe Contents Well",
+      "description": "These are opportunities to make your content easier to understand for a user of assistive technology, like a screen reader."
+    },
+    "a11y-well-structured": {
+      "title": "Elements Are Well Structured",
+      "description": "These are opportunities to make sure your HTML is appropriately structured."
+    },
+    "a11y-aria": {
+      "title": "ARIA Attributes Follow Best Practices",
+      "description": "These are opportunities to improve the usage of ARIA in your application which may enhance the experience for users of assistive technology, like a screen reader."
+    },
+    "a11y-correct-attributes": {
+      "title": "Elements Use Attributes Correctly",
+      "description": "These are opportunities to improve the configuration of your HTML elements."
+    },
+    "a11y-element-names": {
+      "title": "Elements Have Discernible Names",
+      "description": "These are opportunities to improve the semantics of the controls in your application. This may enhance the experience for users of assistive technology, like a screen reader."
+    },
+    "a11y-language": {
+      "title": "Page Specifies Valid Language",
+      "description": "These are opportunities to improve the interpretation of your content by users in different locales."
+    },
+    "a11y-meta": {
+      "title": "Meta Tags Used Properly",
+      "description": "These are opportunities to improve the user experience of your site."
+    },
+    "seo-mobile": {
+      "title": "Mobile Friendly",
+      "description": "Make sure your pages are mobile friendly so users don’t have to pinch or zoom in order to read the content pages. [Learn more](https://developers.google.com/search/mobile-sites/)."
+    },
+    "seo-content": {
+      "title": "Content Best Practices",
+      "description": "Format your HTML in a way that enables crawlers to better understand your app’s content."
+    },
+    "seo-crawl": {
+      "title": "Crawling and Indexing",
+      "description": "To appear in search results, crawlers need access to your app."
+    }
+  },
+  "timing": {
+    "total": 14679
+  },
+  "i18n": {
+    "rendererFormattedStrings": {
+      "auditGroupExpandTooltip": "Show audits",
+      "crcInitialNavigation": "Initial Navigation",
+      "crcLongestDurationLabel": "Maximum critical path latency:",
+      "errorLabel": "Error!",
+      "errorMissingAuditInfo": "Report error: no audit information",
+      "labDataTitle": "Lab Data",
+      "lsPerformanceCategoryDescription": "[Lighthouse](https://developers.google.com/web/tools/lighthouse/) analysis of the current page on emulated 3G. Values are estimated and may vary.",
+      "manualAuditsGroupTitle": "Additional items to manually check",
+      "notApplicableAuditsGroupTitle": "Not applicable",
+      "opportunityResourceColumnLabel": "Opportunity",
+      "opportunitySavingsColumnLabel": "Estimated Savings",
+      "passedAuditsGroupTitle": "Passed audits",
+      "scorescaleLabel": "Score scale:",
+      "toplevelWarningsMessage": "There were issues affecting this run of Lighthouse:",
+      "varianceDisclaimer": "Values are estimated and may vary.",
+      "warningHeader": "Warnings: "
+    },
+    "icuMessagePaths": {
+      "lighthouse-core/audits/metrics/estimated-input-latency.js | title": [
+        "audits[estimated-input-latency].title"
+      ],
+      "lighthouse-core/audits/metrics/estimated-input-latency.js | description": [
+        "audits[estimated-input-latency].description"
+      ],
+      "lighthouse-core/lib/i18n.js | ms": [
+        {
+          "values": {
+            "timeInMs": 63.19999999999989
+          },
+          "path": "audits[estimated-input-latency].displayValue"
+        }
+      ],
+      "lighthouse-core/audits/time-to-first-byte.js | failureTitle": [
+        "audits[time-to-first-byte].title"
+      ],
+      "lighthouse-core/audits/time-to-first-byte.js | description": [
+        "audits[time-to-first-byte].description"
+      ],
+      "lighthouse-core/audits/time-to-first-byte.js | displayValue": [
+        {
+          "values": {
+            "timeInMs": 2006.737
+          },
+          "path": "audits[time-to-first-byte].displayValue"
+        }
+      ],
+      "lighthouse-core/audits/metrics/interactive.js | title": [
+        "audits.interactive.title"
+      ],
+      "lighthouse-core/audits/metrics/interactive.js | description": [
+        "audits.interactive.description"
+      ],
+      "lighthouse-core/lib/i18n.js | seconds": [
+        {
+          "values": {
+            "timeInMs": 7115.9439999999995
+          },
+          "path": "audits.interactive.displayValue"
+        }
+      ],
+      "lighthouse-core/config/default-config.js | performanceCategoryTitle": [
+        "categories.performance.title"
+      ],
+      "lighthouse-core/config/default-config.js | metricGroupTitle": [
+        "categoryGroups.metrics.title"
+      ],
+      "lighthouse-core/config/default-config.js | loadOpportunitiesGroupTitle": [
+        "categoryGroups[load-opportunities].title"
+      ],
+      "lighthouse-core/config/default-config.js | loadOpportunitiesGroupDescription": [
+        "categoryGroups[load-opportunities].description"
+      ],
+      "lighthouse-core/config/default-config.js | diagnosticsGroupTitle": [
+        "categoryGroups.diagnostics.title"
+      ],
+      "lighthouse-core/config/default-config.js | diagnosticsGroupDescription": [
+        "categoryGroups.diagnostics.description"
+      ]
+    }
+  }
+}

@@ -1,0 +1,96 @@
+﻿@model Monitoring.Models.User
+@{
+    ViewBag.Title = "Редактирование данных";
+}
+
+<div class="container">
+    <form id="user-reg-form" method="post" action="/Users/Edit" enctype="multipart/form-data" class="round-div col-md-12 edit_user">
+        <h4 class="form-title">Редактирование данных</h4>
+        <!-- РЕГИСТРАЦИЯ ПОЛЬЗОВАТЕЛЯ -->
+        <input type="hidden" value="@Model.id" name="user_id"/>
+        <input type="hidden" value="@Model.password" id="pass" name="pass" />
+        <div id="user-registration">
+            <div class="row">
+                <div class="form-group col-4">
+                    <label for="surname">Фамилия:</label>
+                    <input type="text" class="form-control" required name="surname" id="surname" value="@Model.Surname" placeholder="Введите фамилию">
+                </div>
+                <div class="form-group col-4">
+                    <label for="name">Имя:</label>
+                    <input type="text" class="form-control" required name="name" value="@Model.Name" id="name" placeholder="Введите имя">
+                </div>
+                <div class="form-group col-4">
+                    <label for="patronymic">Отчество:</label>
+                    <input type="text" class="form-control" name="patronymic" id="patronymic" value="@Model.Patronumic"  placeholder="Введите отчество">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <label for="tel">Контактный телефон:</label>
+                    <div class="input-group mb-3 ">
+                        <input type="text" class="form-control" name="tel" id="tel" value="@if (Model.phone != null) { Write(Model.phone); }">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @if (Model.Photo != null) { 
+                <div class="col-3">
+                    <img id="photo_profile_user" src="@Model.Photo"/>
+                </div>
+                }
+                <div class="col-9">
+                    <label for="photo">Фотография:</label>
+                    <input type="file" class="form-control" name="photo" id="photo">
+                </div>
+            </div>
+
+            <h4 class="form-title">Изменение пароля</h4>
+            <div class="row">
+                <div class="col-12">
+                    <p>Текущий пароль:</p>
+                </div>
+                <div class="col-12">
+                    <div class="input-group mb-3">
+                        <input class="form-control" type="password" data-character-set="a-z,A-Z,0-9,#" id="password_old" name="password_old">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>Новый пароль:</p>
+                </div>
+                <div class="col-12">
+                    <div class="input-group mb-3">
+                            <input class="form-control" type="password" data-character-set="a-z,A-Z,0-9,#" id="password" name="password">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>Повторите пароль</p>
+                </div>
+                <div class="col-12">
+                    <div class="input-group mb-3">
+                        <input class="form-control" type="password" data-character-set="a-z,A-Z,0-9,#" id="password_new" name="password_new">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row center-block btns-bottom">
+                <input type="submit" id="" class="btn btn-primary" value="Сохранить изменения">
+            </div>
+        </div>
+        <!-- МОДАЛЬНОЕ ОКНО -->
+        <div id="dialog" class="">
+            <p>
+                Заполните все поля формы.
+            </p>
+        </div>
+        <!-- МОДАЛЬНОЕ ОКНО -->
+        <!-- РЕГИСТРАЦИЯ ПОЛЬЗОВАТЕЛЯ -->
+    </form>
+</div>
+
+
+

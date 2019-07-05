@@ -1,0 +1,48 @@
+﻿@model Monitoring.Models.reviews_user
+
+@{
+    ViewBag.Title = "Просмотр отзыва";
+}
+
+<div id="dialog" class="">
+    <p>
+        Вы уверены, что хотите удалить данный отзыв?
+    </p>
+</div>
+
+<div class="container" style="margin-top: 50px;">
+    <div class="review round-div">
+        <div class="row d-flex justify-content-between">
+            <div class="time d-flex align-items-center">
+                <img src="~/Content/img/icons/clock.svg" class="icon">
+                <input type="hidden" id="review_id" value="@Model.id" />
+                <p>@Html.DisplayFor(model => model.date_create)</p>
+            </div>
+            <div class="@if (Model.type_reviews.id == 1) { Write("review-type yellow-rw"); }
+            else if (Model.type_reviews.id == 2) { Write("review-type green-rw"); }
+                  @if (Model.type_reviews.id == 3) { Write("review-type red-rw"); }
+                   @if (Model.type_reviews.id == 4) { Write("review-type blue-rw"); }">
+                <span class="type-rw"></span>
+                @Html.DisplayFor(modelItem => Model.type_reviews.name)
+            </div>
+        </div>
+        <div class="row author-rw">
+            <h5>@Html.DisplayFor(model => model.author_name)</h5>
+        </div>
+        <div class="row text-rw">
+            @Html.DisplayFor(model => model.text)
+        </div>
+        <div class="row button-cover d-flex justify-content-end">
+            @if (Model.state_id == 1)
+            {
+            <a href="" class="btn btn-danger">Удалить</a>
+            <a href="@Url.Action("Publish", "Reviews", new { id = Model.id })" class="btn btn-success">Опубликовать</a>
+            }
+        </div>
+    </div>
+
+</div>
+
+
+
+      

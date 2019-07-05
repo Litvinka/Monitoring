@@ -1,0 +1,1085 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище MonitoringModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="area">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="audit_object">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="title_site" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="adress_site" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Coefficients">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="value" Type="decimal" Precision="3" Scale="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Criteria">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="full_name" Type="ntext" Nullable="false" />
+    <Property Name="short_name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="document_name" Type="ntext" Nullable="false" />
+    <Property Name="group_id" Type="int" Nullable="false" />
+    <Property Name="type_organization" Type="int" Nullable="false" />
+    <Property Name="coefficient_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="curators_and_controlers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="curator_id" Type="int" Nullable="false" />
+    <Property Name="education_institution_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="department_subordination">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="district">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="area_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="education_ institution">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="full_name" Type="text" Nullable="false" />
+    <Property Name="short_name" Type="varchar" MaxLength="255" />
+    <Property Name="audit_object_id" Type="int" />
+    <Property Name="district_id" Type="int" Nullable="false" />
+    <Property Name="address" Type="text" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="255" />
+    <Property Name="phone" Type="varchar" MaxLength="255" />
+    <Property Name="type_edu_id" Type="int" />
+    <Property Name="kind_edu_id" Type="int" />
+    <Property Name="OKPO" Type="varchar" MaxLength="255" />
+    <Property Name="UNP" Type="varchar" MaxLength="255" />
+    <Property Name="director" Type="text" />
+    <Property Name="is_application" Type="int" />
+    <Property Name="type_education_institution_id" Type="int" />
+    <Property Name="ownership_type_id" Type="int" />
+    <Property Name="department_subordination_id" Type="int" />
+    <Property Name="state_id" Type="int" />
+    <Property Name="UNP_superior_management" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="events">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="text" Type="text" Nullable="false" />
+    <Property Name="recipient_id" Type="int" Nullable="false" />
+    <Property Name="date_created" Type="datetime" Nullable="false" />
+    <Property Name="state_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="experts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="expert_id" Type="int" Nullable="false" />
+    <Property Name="education_institution_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Experts_comments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="site_experts_id" Type="int" Nullable="false" />
+    <Property Name="answer" Type="int" Nullable="false" />
+    <Property Name="comment" Type="ntext" />
+    <Property Name="criteria_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="experts_ratinng">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="monitoring_id" Type="int" Nullable="false" />
+    <Property Name="audit_object_id" Type="int" Nullable="false" />
+    <Property Name="sum" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kind_edu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kind_event">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="log_event">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="description" Type="text" />
+    <Property Name="author_id" Type="int" />
+    <Property Name="kind_event_id" Type="int" />
+    <Property Name="date" Type="datetime" />
+    <Property Name="IP_adress_object" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="message">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="text" Type="text" Nullable="false" />
+    <Property Name="recipient_id" Type="int" Nullable="false" />
+    <Property Name="author_id" Type="int" Nullable="false" />
+    <Property Name="date_create" Type="datetime" />
+    <Property Name="state_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="monitoring">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="date_start" Type="datetime" Nullable="false" />
+    <Property Name="date_end" Type="datetime" Nullable="false" />
+    <Property Name="number_experts_one_site" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ownership_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rating">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="sum" Type="int" Nullable="false" />
+    <Property Name="monitoring_id" Type="int" Nullable="false" />
+    <Property Name="audit_object_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rating_attendance">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="audit_object_id" Type="int" Nullable="false" />
+    <Property Name="visitors_number" Type="int" Nullable="false" />
+    <Property Name="date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="reviews_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="text" Type="text" />
+    <Property Name="author_name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="author_email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="date_create" Type="datetime" />
+    <Property Name="state_id" Type="int" Nullable="false" />
+    <Property Name="curator_answer" Type="text" />
+    <Property Name="type_id" Type="int" Nullable="false" />
+    <Property Name="audit_object_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="site_experts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="audit_object_id" Type="int" Nullable="false" />
+    <Property Name="expert_id" Type="int" Nullable="false" />
+    <Property Name="date" Type="datetime" />
+    <Property Name="monitoring_id" Type="int" />
+  </EntityType>
+  <EntityType Name="state_edu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="state_reviews">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="number" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="system_event_state">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="number" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="system_events">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="text" Type="text" Nullable="false" />
+    <Property Name="role_id" Type="int" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="state_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="technical_rating">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="audit_object_id" Type="int" Nullable="false" />
+    <Property Name="site_accessibility" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="status_code" Type="varchar" MaxLength="10" />
+    <Property Name="using_HTTPS" Type="varchar" MaxLength="10" />
+    <Property Name="response_time" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="robots_txt" Type="varchar" MaxLength="10" />
+    <Property Name="full_load" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="sum" Type="int" />
+    <Property Name="date" Type="datetime" />
+    <Property Name="img_title" Type="varchar" MaxLength="10" />
+    <Property Name="has_title" Type="varchar" MaxLength="10" />
+    <Property Name="w3c" Type="text" />
+    <Property Name="broken_links_count" Type="int" />
+    <Property Name="broken_links_text" Type="text" />
+    <Property Name="site_map" Type="varchar" MaxLength="10" />
+    <Property Name="site_map_ok" Type="text" />
+    <Property Name="monitoring_id" Type="int" Nullable="false" />
+    <Property Name="nesting_level" Type="int" />
+  </EntityType>
+  <EntityType Name="type_edu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="type_education_institution">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="nane" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="type_reviews">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Surname" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Patronumic" Type="varchar" MaxLength="255" />
+    <Property Name="Photo" Type="text" />
+    <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="role_id" Type="int" Nullable="false" />
+    <Property Name="state_id" Type="int" Nullable="false" />
+    <Property Name="phone" Type="varchar" MaxLength="45" />
+    <Property Name="position" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="users_rating">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="audit_object_id" Type="int" Nullable="false" />
+    <Property Name="number_reviews" Type="int" />
+    <Property Name="number_processed_reviews" Type="int" />
+    <Property Name="number_likes" Type="int" />
+    <Property Name="sum" Type="int" />
+    <Property Name="date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="users_state">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="number" Type="int" />
+  </EntityType>
+  <Association Name="FK_Criteria_Coefficients">
+    <End Role="Coefficients" Type="Self.Coefficients" Multiplicity="1" />
+    <End Role="Criteria" Type="Self.Criteria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Coefficients">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Criteria">
+        <PropertyRef Name="coefficient_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Criteria_Groups">
+    <End Role="Groups" Type="Self.Groups" Multiplicity="1" />
+    <End Role="Criteria" Type="Self.Criteria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Criteria">
+        <PropertyRef Name="group_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_curators_and_controlers_education_ institution">
+    <End Role="education_ institution" Type="Self.education_ institution" Multiplicity="1" />
+    <End Role="curators_and_controlers" Type="Self.curators_and_controlers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="education_ institution">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="curators_and_controlers">
+        <PropertyRef Name="education_institution_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_curators_and_controlers_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="curators_and_controlers" Type="Self.curators_and_controlers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="curators_and_controlers">
+        <PropertyRef Name="curator_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_district_area">
+    <End Role="area" Type="Self.area" Multiplicity="1" />
+    <End Role="district" Type="Self.district" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="area">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="district">
+        <PropertyRef Name="area_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_education_ institution_audit_object">
+    <End Role="audit_object" Type="Self.audit_object" Multiplicity="0..1" />
+    <End Role="education_ institution" Type="Self.education_ institution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="audit_object">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="education_ institution">
+        <PropertyRef Name="audit_object_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_education_ institution_department_subordination">
+    <End Role="department_subordination" Type="Self.department_subordination" Multiplicity="0..1" />
+    <End Role="education_ institution" Type="Self.education_ institution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="department_subordination">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="education_ institution">
+        <PropertyRef Name="department_subordination_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_education_ institution_district">
+    <End Role="district" Type="Self.district" Multiplicity="1" />
+    <End Role="education_ institution" Type="Self.education_ institution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="district">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="education_ institution">
+        <PropertyRef Name="district_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_education_ institution_kind_edu">
+    <End Role="kind_edu" Type="Self.kind_edu" Multiplicity="0..1" />
+    <End Role="education_ institution" Type="Self.education_ institution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kind_edu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="education_ institution">
+        <PropertyRef Name="kind_edu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_education_ institution_ownership_type">
+    <End Role="ownership_type" Type="Self.ownership_type" Multiplicity="0..1" />
+    <End Role="education_ institution" Type="Self.education_ institution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ownership_type">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="education_ institution">
+        <PropertyRef Name="ownership_type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_education_ institution_state_edu">
+    <End Role="state_edu" Type="Self.state_edu" Multiplicity="0..1" />
+    <End Role="education_ institution" Type="Self.education_ institution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="state_edu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="education_ institution">
+        <PropertyRef Name="state_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_education_ institution_type_edu">
+    <End Role="type_edu" Type="Self.type_edu" Multiplicity="0..1" />
+    <End Role="education_ institution" Type="Self.education_ institution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="type_edu">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="education_ institution">
+        <PropertyRef Name="type_edu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_education_ institution_type_education_institution">
+    <End Role="type_education_institution" Type="Self.type_education_institution" Multiplicity="0..1" />
+    <End Role="education_ institution" Type="Self.education_ institution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="type_education_institution">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="education_ institution">
+        <PropertyRef Name="type_education_institution_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_events_system_event_state">
+    <End Role="system_event_state" Type="Self.system_event_state" Multiplicity="1" />
+    <End Role="events" Type="Self.events" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="system_event_state">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="events">
+        <PropertyRef Name="state_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_events_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="events" Type="Self.events" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="events">
+        <PropertyRef Name="recipient_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Experts_comments_Criteria">
+    <End Role="Criteria" Type="Self.Criteria" Multiplicity="1" />
+    <End Role="Experts_comments" Type="Self.Experts_comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Criteria">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Experts_comments">
+        <PropertyRef Name="criteria_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Experts_comments_site_experts">
+    <End Role="site_experts" Type="Self.site_experts" Multiplicity="1" />
+    <End Role="Experts_comments" Type="Self.Experts_comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="site_experts">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Experts_comments">
+        <PropertyRef Name="site_experts_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_experts_education_ institution">
+    <End Role="education_ institution" Type="Self.education_ institution" Multiplicity="1" />
+    <End Role="experts" Type="Self.experts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="education_ institution">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="experts">
+        <PropertyRef Name="education_institution_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_experts_ratinng_audit_object">
+    <End Role="audit_object" Type="Self.audit_object" Multiplicity="1" />
+    <End Role="experts_ratinng" Type="Self.experts_ratinng" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="audit_object">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="experts_ratinng">
+        <PropertyRef Name="audit_object_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_experts_ratinng_monitoring">
+    <End Role="monitoring" Type="Self.monitoring" Multiplicity="1" />
+    <End Role="experts_ratinng" Type="Self.experts_ratinng" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="monitoring">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="experts_ratinng">
+        <PropertyRef Name="monitoring_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_experts_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="experts" Type="Self.experts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="experts">
+        <PropertyRef Name="expert_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_log_event_kind_event">
+    <End Role="kind_event" Type="Self.kind_event" Multiplicity="0..1" />
+    <End Role="log_event" Type="Self.log_event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kind_event">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="log_event">
+        <PropertyRef Name="kind_event_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_log_event_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="log_event" Type="Self.log_event" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="log_event">
+        <PropertyRef Name="author_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_rating_attendance_audit_object">
+    <End Role="audit_object" Type="Self.audit_object" Multiplicity="1" />
+    <End Role="rating_attendance" Type="Self.rating_attendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="audit_object">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="rating_attendance">
+        <PropertyRef Name="audit_object_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_audit_object">
+    <End Role="audit_object" Type="Self.audit_object" Multiplicity="1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="audit_object">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="audit_object_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rating_monitoring">
+    <End Role="monitoring" Type="Self.monitoring" Multiplicity="1" />
+    <End Role="Rating" Type="Self.Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="monitoring">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Rating">
+        <PropertyRef Name="monitoring_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_reviews_user_audit_object">
+    <End Role="audit_object" Type="Self.audit_object" Multiplicity="1" />
+    <End Role="reviews_user" Type="Self.reviews_user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="audit_object">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="reviews_user">
+        <PropertyRef Name="audit_object_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_reviews_user_state_reviews">
+    <End Role="state_reviews" Type="Self.state_reviews" Multiplicity="1" />
+    <End Role="reviews_user" Type="Self.reviews_user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="state_reviews">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="reviews_user">
+        <PropertyRef Name="state_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_reviews_user_type_reviews">
+    <End Role="type_reviews" Type="Self.type_reviews" Multiplicity="1" />
+    <End Role="reviews_user" Type="Self.reviews_user" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="type_reviews">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="reviews_user">
+        <PropertyRef Name="type_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_site_experts_audit_object1">
+    <End Role="audit_object" Type="Self.audit_object" Multiplicity="1" />
+    <End Role="site_experts" Type="Self.site_experts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="audit_object">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="site_experts">
+        <PropertyRef Name="audit_object_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_site_experts_experts">
+    <End Role="experts" Type="Self.experts" Multiplicity="1" />
+    <End Role="site_experts" Type="Self.site_experts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="experts">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="site_experts">
+        <PropertyRef Name="expert_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_site_experts_monitoring">
+    <End Role="monitoring" Type="Self.monitoring" Multiplicity="0..1" />
+    <End Role="site_experts" Type="Self.site_experts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="monitoring">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="site_experts">
+        <PropertyRef Name="monitoring_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_system_event_system_event_state">
+    <End Role="system_event_state" Type="Self.system_event_state" Multiplicity="1" />
+    <End Role="message" Type="Self.message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="system_event_state">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="message">
+        <PropertyRef Name="state_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_system_event_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="message" Type="Self.message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="message">
+        <PropertyRef Name="recipient_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_system_event_User1">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="message" Type="Self.message" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="message">
+        <PropertyRef Name="author_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_system_events_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="system_events" Type="Self.system_events" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="system_events">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_system_events_system_event_state">
+    <End Role="system_event_state" Type="Self.system_event_state" Multiplicity="1" />
+    <End Role="system_events" Type="Self.system_events" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="system_event_state">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="system_events">
+        <PropertyRef Name="state_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_system_events_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="system_events" Type="Self.system_events" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="system_events">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_technical_rating_audit_object">
+    <End Role="audit_object" Type="Self.audit_object" Multiplicity="1" />
+    <End Role="technical_rating" Type="Self.technical_rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="audit_object">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="technical_rating">
+        <PropertyRef Name="audit_object_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_technical_rating_monitoring">
+    <End Role="monitoring" Type="Self.monitoring" Multiplicity="1" />
+    <End Role="technical_rating" Type="Self.technical_rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="monitoring">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="technical_rating">
+        <PropertyRef Name="monitoring_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_users_state">
+    <End Role="users_state" Type="Self.users_state" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users_state">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="state_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_users_rating_audit_object">
+    <End Role="audit_object" Type="Self.audit_object" Multiplicity="1" />
+    <End Role="users_rating" Type="Self.users_rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="audit_object">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users_rating">
+        <PropertyRef Name="audit_object_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище MonitoringModelContainer">
+    <EntitySet Name="area" EntityType="Self.area" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="audit_object" EntityType="Self.audit_object" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Coefficients" EntityType="Self.Coefficients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Criteria" EntityType="Self.Criteria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="curators_and_controlers" EntityType="Self.curators_and_controlers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="department_subordination" EntityType="Self.department_subordination" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="district" EntityType="Self.district" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="education_ institution" EntityType="Self.education_ institution" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="events" EntityType="Self.events" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="experts" EntityType="Self.experts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Experts_comments" EntityType="Self.Experts_comments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="experts_ratinng" EntityType="Self.experts_ratinng" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kind_edu" EntityType="Self.kind_edu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kind_event" EntityType="Self.kind_event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="log_event" EntityType="Self.log_event" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="message" EntityType="Self.message" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="monitoring" EntityType="Self.monitoring" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ownership_type" EntityType="Self.ownership_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rating" EntityType="Self.Rating" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rating_attendance" EntityType="Self.rating_attendance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="reviews_user" EntityType="Self.reviews_user" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="site_experts" EntityType="Self.site_experts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="state_edu" EntityType="Self.state_edu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="state_reviews" EntityType="Self.state_reviews" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="system_event_state" EntityType="Self.system_event_state" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="system_events" EntityType="Self.system_events" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="technical_rating" EntityType="Self.technical_rating" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="type_edu" EntityType="Self.type_edu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="type_education_institution" EntityType="Self.type_education_institution" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="type_reviews" EntityType="Self.type_reviews" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users_rating" EntityType="Self.users_rating" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users_state" EntityType="Self.users_state" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Criteria_Coefficients" Association="Self.FK_Criteria_Coefficients">
+      <End Role="Coefficients" EntitySet="Coefficients" />
+      <End Role="Criteria" EntitySet="Criteria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Criteria_Groups" Association="Self.FK_Criteria_Groups">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="Criteria" EntitySet="Criteria" />
+    </AssociationSet>
+    <AssociationSet Name="FK_curators_and_controlers_education_ institution" Association="Self.FK_curators_and_controlers_education_ institution">
+      <End Role="education_ institution" EntitySet="education_ institution" />
+      <End Role="curators_and_controlers" EntitySet="curators_and_controlers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_curators_and_controlers_User" Association="Self.FK_curators_and_controlers_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="curators_and_controlers" EntitySet="curators_and_controlers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_district_area" Association="Self.FK_district_area">
+      <End Role="area" EntitySet="area" />
+      <End Role="district" EntitySet="district" />
+    </AssociationSet>
+    <AssociationSet Name="FK_education_ institution_audit_object" Association="Self.FK_education_ institution_audit_object">
+      <End Role="audit_object" EntitySet="audit_object" />
+      <End Role="education_ institution" EntitySet="education_ institution" />
+    </AssociationSet>
+    <AssociationSet Name="FK_education_ institution_department_subordination" Association="Self.FK_education_ institution_department_subordination">
+      <End Role="department_subordination" EntitySet="department_subordination" />
+      <End Role="education_ institution" EntitySet="education_ institution" />
+    </AssociationSet>
+    <AssociationSet Name="FK_education_ institution_district" Association="Self.FK_education_ institution_district">
+      <End Role="district" EntitySet="district" />
+      <End Role="education_ institution" EntitySet="education_ institution" />
+    </AssociationSet>
+    <AssociationSet Name="FK_education_ institution_kind_edu" Association="Self.FK_education_ institution_kind_edu">
+      <End Role="kind_edu" EntitySet="kind_edu" />
+      <End Role="education_ institution" EntitySet="education_ institution" />
+    </AssociationSet>
+    <AssociationSet Name="FK_education_ institution_ownership_type" Association="Self.FK_education_ institution_ownership_type">
+      <End Role="ownership_type" EntitySet="ownership_type" />
+      <End Role="education_ institution" EntitySet="education_ institution" />
+    </AssociationSet>
+    <AssociationSet Name="FK_education_ institution_state_edu" Association="Self.FK_education_ institution_state_edu">
+      <End Role="state_edu" EntitySet="state_edu" />
+      <End Role="education_ institution" EntitySet="education_ institution" />
+    </AssociationSet>
+    <AssociationSet Name="FK_education_ institution_type_edu" Association="Self.FK_education_ institution_type_edu">
+      <End Role="type_edu" EntitySet="type_edu" />
+      <End Role="education_ institution" EntitySet="education_ institution" />
+    </AssociationSet>
+    <AssociationSet Name="FK_education_ institution_type_education_institution" Association="Self.FK_education_ institution_type_education_institution">
+      <End Role="type_education_institution" EntitySet="type_education_institution" />
+      <End Role="education_ institution" EntitySet="education_ institution" />
+    </AssociationSet>
+    <AssociationSet Name="FK_events_system_event_state" Association="Self.FK_events_system_event_state">
+      <End Role="system_event_state" EntitySet="system_event_state" />
+      <End Role="events" EntitySet="events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_events_User" Association="Self.FK_events_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="events" EntitySet="events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Experts_comments_Criteria" Association="Self.FK_Experts_comments_Criteria">
+      <End Role="Criteria" EntitySet="Criteria" />
+      <End Role="Experts_comments" EntitySet="Experts_comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Experts_comments_site_experts" Association="Self.FK_Experts_comments_site_experts">
+      <End Role="site_experts" EntitySet="site_experts" />
+      <End Role="Experts_comments" EntitySet="Experts_comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_experts_education_ institution" Association="Self.FK_experts_education_ institution">
+      <End Role="education_ institution" EntitySet="education_ institution" />
+      <End Role="experts" EntitySet="experts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_experts_ratinng_audit_object" Association="Self.FK_experts_ratinng_audit_object">
+      <End Role="audit_object" EntitySet="audit_object" />
+      <End Role="experts_ratinng" EntitySet="experts_ratinng" />
+    </AssociationSet>
+    <AssociationSet Name="FK_experts_ratinng_monitoring" Association="Self.FK_experts_ratinng_monitoring">
+      <End Role="monitoring" EntitySet="monitoring" />
+      <End Role="experts_ratinng" EntitySet="experts_ratinng" />
+    </AssociationSet>
+    <AssociationSet Name="FK_experts_User" Association="Self.FK_experts_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="experts" EntitySet="experts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_log_event_kind_event" Association="Self.FK_log_event_kind_event">
+      <End Role="kind_event" EntitySet="kind_event" />
+      <End Role="log_event" EntitySet="log_event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_log_event_User" Association="Self.FK_log_event_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="log_event" EntitySet="log_event" />
+    </AssociationSet>
+    <AssociationSet Name="FK_rating_attendance_audit_object" Association="Self.FK_rating_attendance_audit_object">
+      <End Role="audit_object" EntitySet="audit_object" />
+      <End Role="rating_attendance" EntitySet="rating_attendance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_audit_object" Association="Self.FK_Rating_audit_object">
+      <End Role="audit_object" EntitySet="audit_object" />
+      <End Role="Rating" EntitySet="Rating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rating_monitoring" Association="Self.FK_Rating_monitoring">
+      <End Role="monitoring" EntitySet="monitoring" />
+      <End Role="Rating" EntitySet="Rating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_reviews_user_audit_object" Association="Self.FK_reviews_user_audit_object">
+      <End Role="audit_object" EntitySet="audit_object" />
+      <End Role="reviews_user" EntitySet="reviews_user" />
+    </AssociationSet>
+    <AssociationSet Name="FK_reviews_user_state_reviews" Association="Self.FK_reviews_user_state_reviews">
+      <End Role="state_reviews" EntitySet="state_reviews" />
+      <End Role="reviews_user" EntitySet="reviews_user" />
+    </AssociationSet>
+    <AssociationSet Name="FK_reviews_user_type_reviews" Association="Self.FK_reviews_user_type_reviews">
+      <End Role="type_reviews" EntitySet="type_reviews" />
+      <End Role="reviews_user" EntitySet="reviews_user" />
+    </AssociationSet>
+    <AssociationSet Name="FK_site_experts_audit_object1" Association="Self.FK_site_experts_audit_object1">
+      <End Role="audit_object" EntitySet="audit_object" />
+      <End Role="site_experts" EntitySet="site_experts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_site_experts_experts" Association="Self.FK_site_experts_experts">
+      <End Role="experts" EntitySet="experts" />
+      <End Role="site_experts" EntitySet="site_experts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_site_experts_monitoring" Association="Self.FK_site_experts_monitoring">
+      <End Role="monitoring" EntitySet="monitoring" />
+      <End Role="site_experts" EntitySet="site_experts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_system_event_system_event_state" Association="Self.FK_system_event_system_event_state">
+      <End Role="system_event_state" EntitySet="system_event_state" />
+      <End Role="message" EntitySet="message" />
+    </AssociationSet>
+    <AssociationSet Name="FK_system_event_User" Association="Self.FK_system_event_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="message" EntitySet="message" />
+    </AssociationSet>
+    <AssociationSet Name="FK_system_event_User1" Association="Self.FK_system_event_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="message" EntitySet="message" />
+    </AssociationSet>
+    <AssociationSet Name="FK_system_events_Role" Association="Self.FK_system_events_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="system_events" EntitySet="system_events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_system_events_system_event_state" Association="Self.FK_system_events_system_event_state">
+      <End Role="system_event_state" EntitySet="system_event_state" />
+      <End Role="system_events" EntitySet="system_events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_system_events_User" Association="Self.FK_system_events_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="system_events" EntitySet="system_events" />
+    </AssociationSet>
+    <AssociationSet Name="FK_technical_rating_audit_object" Association="Self.FK_technical_rating_audit_object">
+      <End Role="audit_object" EntitySet="audit_object" />
+      <End Role="technical_rating" EntitySet="technical_rating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_technical_rating_monitoring" Association="Self.FK_technical_rating_monitoring">
+      <End Role="monitoring" EntitySet="monitoring" />
+      <End Role="technical_rating" EntitySet="technical_rating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_users_state" Association="Self.FK_User_users_state">
+      <End Role="users_state" EntitySet="users_state" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_users_rating_audit_object" Association="Self.FK_users_rating_audit_object">
+      <End Role="audit_object" EntitySet="audit_object" />
+      <End Role="users_rating" EntitySet="users_rating" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

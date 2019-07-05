@@ -1,0 +1,56 @@
+﻿@model Monitoring.Models.education__institution
+@{
+    ViewBag.Title = "Мониторинг";
+}
+
+<div class="container cur-index" style="margin-top: 50px;">
+        <div class="row" id="rating_site_text">
+            <div class="col-md-5 ">
+                <div class="first-row">
+                    <div class="round-div btn-div">
+                        <h4>Рейтинг сайта "@Model.short_name"</h4>
+                        <div class="site-rating">
+                            <p>В этом полугодии данный сайт на <b>@ViewBag.place позиции</b>.</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+            <input type="hidden" id="audit_object__id" value="@Model.audit_object_id" />
+        <div class="col-md-7 ">
+            <div class="round-div btn-div">
+                <canvas id="chart"></canvas>
+            </div>
+        </div>
+
+@if (ViewBag.monitoring != null)
+{
+    <aside class="col-md-3 round-div">
+            <h4>История</h4>
+            @Html.Action("_DateMonitoring1", "Curator", new { site = Model.audit_object_id })
+        </aside>
+
+        <div class="col-md-9">
+            @Html.Action("_t_rating", "Curator", new { edu1 = Model.id, m = ViewBag.monitoring })
+            @if (ViewBag.monitoring != null)
+            {
+            <div class="rez_exp_rt col-md-12">
+                <h3>Результаты экспертного рейтинга:</h3>
+                @foreach (var i in ViewBag.groups)
+                {
+                    <div class="block_experts">
+                        <div class="btn-primary blocks" data-toggle="collapse" data-target="#block_@i.id">@i.name</div>
+                        <div id="block_@i.id" class="collapse">
+                            @Html.Action("_answer_end", "Curator", new { site_id = Model.id, group_id = i.id, m = ViewBag.monitoring })
+                        </div>
+                    </div>
+                }
+            </div>
+            }
+        </div>
+}
+    </div>
+</div>
+
+
+
+

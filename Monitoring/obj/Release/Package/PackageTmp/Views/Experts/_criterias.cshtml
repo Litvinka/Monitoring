@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Monitoring.Models.Criteria>
+
+    @for (int i = 0; i < Model.Count(); ++i)
+    {
+        <div class="one_block">
+            <div class="block_text">
+                <p class="short_text">
+                    <b>@(i + 1). @Model.ElementAt(i).short_name</b>
+                    <a class="read_document" href="#">подробнее</a>
+                </p>
+                <p class="document_text">@Model.ElementAt(i).document_name</p>
+            </div>
+            <div class="block_radio">
+                <label for="ask_@Model.ElementAt(i).id"><input type="radio" id="ask_@Model.ElementAt(i).id" value="1" name="ask_@Model.ElementAt(i).id" />Да</label>
+                <label for="ask_@Model.ElementAt(i).id"><input type="radio" checked id="ask_@Model.ElementAt(i).id" value="0" name="ask_@Model.ElementAt(i).id" />Нет</label>
+            </div>
+            <div class="block_comment">
+                <label for="comment_@Model.ElementAt(i).id">Комментарий</label>
+                <textarea name="comment_@Model.ElementAt(i).id" id="comment_@Model.ElementAt(i).id"></textarea>
+            </div>
+        </div>
+    }

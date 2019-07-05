@@ -1,0 +1,49 @@
+﻿@model Monitoring.Models.site_experts
+
+@{
+    ViewBag.Title = "Экспертный рейтинг сайта";
+}
+
+<div class="container round-div" style="margin-top: 50px;">
+    <h4 class="form-title">@Model.audit_object.education__institution.First(p=>p.audit_object_id==Model.audit_object_id).full_name</h4>
+    <ul class="nav nav-tabs" role="tablist">
+        <li><a href="#tech_rating" class="active" role="tab" data-toggle="tab">Результаты технического рейтинга</a></li>
+        <li><a href="#expert_rating" role="tab" data-toggle="tab">Экспертный рейтинг</a></li>
+    </ul>
+    <div class="sites_rating tab-content tabs_forms">
+        <div class="tab-pane active" id="tech_rating">
+            @Html.Action("_t_rating", "Curator",new { edu1=Model.audit_object.education__institution.First(p=>p.audit_object_id==Model.audit_object_id).id, m=Model.monitoring_id})
+        </div>
+
+
+        <div class="tab-pane" id="expert_rating">
+            @if (ViewBag.count > 0)
+            {
+                <h3>Ответы:</h3>
+            }
+            <form method="post" action="/Experts/AddComment">
+                <input type="hidden" name="site_expert" value="@Model.id" />
+                <input type="hidden" name="site_id" value="@Model.audit_object_id" />
+                @foreach (var i in ViewBag.groups)
+                {
+                <div class="block_experts">
+                    <div class="btn-primary blocks" data-toggle="collapse" data-target="#block_@i.id">@i.name</div>
+                    <div id="block_@i.id" class="collapse">
+                        @if (ViewBag.count >0) { @Html.Action("_answers", "Experts", new { site_experts_id = Model.id, group_id = i.id }); }
+                        else { @Html.Action("_criterias", "Experts", new { site_experts_id = Model.id, group_id = i.id }); }
+                    </div>
+                </div>
+
+                }
+                @if (ViewBag.count == 0)
+                {<div class="text-center">
+                    <input type="submit" class="btn btn-primary btn-xs btn-adm" value="Отправить" />
+                </div>
+                }
+            </form>
+        </div>
+    </div>
+
+</div>
+
+

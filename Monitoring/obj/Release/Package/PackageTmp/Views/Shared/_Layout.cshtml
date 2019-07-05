@@ -1,0 +1,365 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title | Мониторинг</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/styles.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/table-style.css">
+</head>
+<body>
+    <div id="before-load">
+        <i></i>
+    </div>
+    <header>
+        <nav class="navbar navbar-expand-lg ">
+            <a class="navbar-brand" href="/">АИС Мониторинг</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            @if (Session["user"] != null)
+            {
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto">
+                        @if (Convert.ToInt32(Session["role"]) == 5)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Reviews/Index">Отзывы</a>
+                            </li>
+                        }
+                        else if (Convert.ToInt32(Session["role"]) == 4)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Experts/Index">Список сайтов</a>
+                            </li>
+                        }
+                        else if (Convert.ToInt32(Session["role"]) == 2)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Curator/Index">Главная</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Curator/Monitoring">Мониторинг</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Curator/Reviews">Отзывы</a>
+                            </li>
+                        }
+                        else if (Convert.ToInt32(Session["role"]) == 3)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Curator/Index">Главная</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Curator/Monitoring">Мониторинг</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Curator/Reviews">Отзывы</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/Curator/SubordinateOrganizations">Подчиненные организации</a>
+                            </li>
+                        }
+                        else if (Convert.ToInt32(Session["role"]) == 1)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Users/Distribution">Начать мониторинг</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Experts/SiteExperts">Текущее распределение</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Users/Index">Список пользователей</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Users/Create">
+                                    Добавить пользователя
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Institution/Index">Список организаций</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Institution/Create">
+                                    Добавить организацию
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Reports/Index">
+                                    Отчеты
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="notification">
+                            <a href="/Events/Index">
+                                <img class="question-sign" src="~/Content/img/icons/notification.svg" />
+                                @if (Convert.ToInt32(Session["notification"]) > 0)
+                                {
+                                    <span class="span_notification">@Session["notification"]</span>
+                                }
+                            </a>
+                        </li>
+                        <li class="notification">
+                            <a href="/Messages/Index">
+                                <img class="question-sign" src="~/Content/img/icons/email.png" />
+                                @if (Convert.ToInt32(Session["message"]) > 0)
+                                {
+                                    <span class="span_notification">@Session["message"]</span>
+                                }
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <span><b>@Session["rolename"]</b> @Session["user"]</span>
+                                <span class="caret"></span>
+                            </a>
+                                @if (Session["photo"] != null)
+                                {
+                                    <img class="userpic" src="@Session["photo"]">
+                                }
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Details","Users",new {id=Convert.ToInt32(Session["user_id"])})">Профиль</a></li>
+                                @if (Convert.ToInt32(Session["role"]) == 2 || Convert.ToInt32(Session["role"]) == 3)
+                                {
+                                    <li><a href="@Url.Action("Details","Institution",new {id=Convert.ToInt32(Session["edu_id"])})">Организация</a></li>
+                                }
+                                <li><a href="/Users/Logout">Выйти</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            }@if (Session["rolename"] == null)
+            { <a href="/Users/Login">Войти</a>}
+</nav>
+    </header>
+    
+
+        @RenderBody()
+    <!-- Simple pop-up dialog box, containing a form -->
+    <div id="div_dialog_form"></div>
+    <form method="post" id="dialog_form_admin" class="round-div" title="Сообщение администратору">
+        <input type="hidden" value="1" name="recipient" />
+        <input type="hidden" value="@Convert.ToInt32(Session["user_id"])" name="author" />
+        <div class="row">
+            <div class="form-group col-12">
+                <label for="title_message">Название:</label>
+                <input type="text" required class="form-control" name="title_message" id="title_message">
+            </div>
+            <div class="form-group col-12">
+                <label for="text_message">Текст:</label>
+                <textarea class="form-control" name="text_message" required id="text_message"></textarea>
+            </div>
+        </div>
+        <menu>
+            <button class="btn btn-danger" id="cancel">Отмена</button>
+            <button class="btn btn-success" type="submit" id="send">Отправить</button>
+        </menu>
+    </form>
+
+
+    <footer>
+       <p>&copy; @DateTime.Now.Year – Мониторинг</p>
+       <p>
+            <a class="help" href="/Home/Help"><img class="question-sign" src="~/Content/img/icons/question.svg">Справка</a>
+            @if (Session["user"] != null && Convert.ToInt32(Session["role"]) != 1)
+            {
+                <a href="#" id="messageAdmin">Связаться с Администратором</a>
+            }
+       </p>
+    </footer>
+
+    
+
+     
+    <!-- jQuery 3 -->
+    <script src="~/Scripts/jquery/dist/jquery.min.js"></script>
+    <script>
+        setTimeout(function () { $('#before-load').find('i').fadeOut().end().delay(400).fadeOut('slow'); }, 1000);
+        // Прелоадер
+        $(window).load(function () {
+            $('#before-load').find('i').fadeOut().end().delay(400).fadeOut('slow');
+        });
+    </script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="~/Scripts/bootstrap/bootstrap.min.js"></script>
+    <!-- InputMask -->
+    <script src="~/Scripts/input-mask/jquery.inputmask.js"></script>
+    <script src="~/Scripts/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script src="~/Scripts/input-mask/jquery.inputmask.extensions.js"></script>
+    <!-- DataTables -->
+    <script src="~/Scripts/datatables/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/datatables/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/Scripts/PACE/pace.min.js"></script>
+
+    <script src="~/Scripts/jquery.maskedinput.js"></script>
+    <script src="~/Scripts/curator-reg-form.js"></script>
+    <script src="~/Scripts/user-reg-form.js"></script>
+    <script src="~/Scripts/chart.js/Chart.js"></script>
+    <script src="~/Scripts/password-generator.js"></script>
+    <script src="~/Scripts/MessageAnswer.js"></script>
+    <script src="~/Scripts/cur-reviews.js"></script>
+    <script src="~/Scripts/DeleteData.js"></script>
+    <script src="~/Scripts/GetNameEdu.js"></script>
+    <script src="~/Scripts/get_sites.js"></script>
+    <script>
+
+        //$('#select-edu').click(function () {
+        //    $('#edu-open-div').css("display", "flex");
+        //})
+
+        var x=$('#example1').DataTable({
+                'paging': true,
+                'ordering': true,
+                'info': false,
+                'autoWidth': true,
+                'language': {
+                    "processing": "Подождите...",
+                    "search": "Поиск:",
+                    "lengthMenu": "Показать _MENU_ записей",
+                    "info": "Записи с _START_ до _END_ из _TOTAL_ записей",
+                    "infoEmpty": "Записи с 0 до 0 из 0 записей",
+                    "infoFiltered": "(отфильтровано из _MAX_ записей)",
+                    "infoPostFix": "",
+                    "loadingRecords": "Загрузка записей...",
+                    "zeroRecords": "Записи отсутствуют.",
+                    "emptyTable": "В таблице отсутствуют данные",
+                    "paginate": {
+                        "first": "Первая",
+                        "previous": "Предыдущая",
+                        "next": "Следующая",
+                        "last": "Последняя"
+                    },
+                    "aria": {
+                        "sortAscending": ": активировать для сортировки столбца по возрастанию",
+                        "sortDescending": ": активировать для сортировки столбца по убыванию"
+                    }
+                }
+            });
+
+
+        var ctx = document.getElementById("chart");
+        if (ctx) {
+            $.ajax({
+                type: 'POST',
+                url: '/Curator/Get_Place',
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                data: JSON.stringify({ 'site': $('#audit_object__id').val() }),
+                success: function (data) {
+                    var res = data.split(";");
+                    var date = res[0].substr(1, res[0].length-2).split(",");
+                    var place = res[1].substr(1, res[1].length-2).split(",");
+                    console.log(place);
+                    var myChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: date,
+                            datasets: [{
+                                label: 'Место в рейтинге',
+                                data: place,
+                                lineTension: 0,
+                                fill: false,
+                                backgroundColor: 'transparent',
+                                borderColor: 'orange',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        reverse: true
+                                    }
+                                }]
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+        
+
+        // To make Pace works on Ajax calls
+        $(document).ajaxStart(function () {
+            Pace.restart()
+        })
+        $('.ajax').click(function () {
+            $.ajax({
+                url: '#', success: function (result) {
+                    $('.ajax-content').html('<hr>Ajax Request Completed !')
+                }
+            })
+        });
+
+
+        var path=window.location.pathname;
+        var li=$(".navbar-nav li.nav-item a");
+        for (var i = 0; i < li.length; ++i) {
+            if (li[i].getAttribute("href").toLowerCase()==path.toLowerCase()) {
+                li[i].parentNode.classList.add("active");
+            }
+        }
+
+
+        if ($('#enter-raion-edu').length && path.toLowerCase() == "/Institution/Create".toLowerCase()) {
+            $('#enter-raion-edu').attr("disabled", true);
+        }
+        $("#enter-obl-edu").change(function () {
+            if ($("#enter-obl-edu").val()) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Users/GetAllDistrict/',
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    data: JSON.stringify({ 'param': $('#enter-obl-edu').val() }),
+                    success: function (data) {
+                        data = data.replace(/\]/g, "");
+                        data = data.replace(/\[/g, "");
+                        data = data.replace(/\"/g, "");
+                        var arr = data.toString().split(',');
+                        $('#enter-raion-edu').attr("disabled", false);
+                        document.getElementById('enter-raion-edu').innerHTML = '';
+                        $('#enter-raion-edu').append(new Option(arr[i + 1]));
+                        for (var i = 0; i < arr.length; ++i) {
+                            $('#enter-raion-edu').append(new Option(arr[i + 1], arr[i]));
+                            ++i;
+                        }
+                    }
+                });
+            }
+            else {
+                document.getElementById('enter-raion-edu').innerHTML = '';
+                $('#enter-raion-edu').attr("disabled", true);
+            }
+        });
+
+        $(".read_document").click(function (e) {
+            e.preventDefault();
+            var doc = $(this).parents(".block_text").children()[1];
+            console.log(doc);
+            if ($(doc).css("display") == "none") {
+                $(doc).fadeIn();
+                e.target.innerText = "скрыть";
+            }
+            else {
+                $(doc).fadeOut();
+                e.target.innerText = "подробнее";
+            }
+        });
+
+    </script>
+
+
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
